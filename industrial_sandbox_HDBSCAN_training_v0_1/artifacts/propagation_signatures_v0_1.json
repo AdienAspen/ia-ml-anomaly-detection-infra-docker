@@ -1,0 +1,4930 @@
+[
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0002",
+    "cluster_id": 0,
+    "window_id": "temporal_window_0002",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "redis",
+      "payments-api",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": 56.0,
+        "p50": 56.0,
+        "p90": 56.0
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 10,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "redis": [
+        "redis_latency"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 176.120004,
+        "max": 267.053919
+      },
+      "latency_p95_orders": {
+        "min": 160.874999,
+        "max": 258.513891
+      },
+      "latency_p95_checkout": {
+        "min": 170.468566,
+        "max": 244.569847
+      },
+      "error_rate_orders": {
+        "min": 0.008869,
+        "max": 0.015082
+      },
+      "error_rate_checkout": {
+        "min": 0.009816,
+        "max": 0.014108
+      },
+      "redis_queue_depth": {
+        "min": 20.977677,
+        "max": 38.052858
+      },
+      "redis_latency": {
+        "min": 7.575154,
+        "max": 10.915453
+      },
+      "iforest_score_payments": {
+        "min": 0.453667,
+        "max": 0.508658
+      }
+    },
+    "window_data_quality_score": 0.862561,
+    "propagation_order_confidence": 1.0,
+    "observation_period": {
+      "start": "2026-01-01T00:02:07+00:00",
+      "end": "2026-01-01T00:04:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0002",
+        "temporal_window_0003",
+        "temporal_window_0004",
+        "temporal_window_0005",
+        "temporal_window_0046",
+        "temporal_window_0047",
+        "temporal_window_0058",
+        "temporal_window_0059",
+        "temporal_window_0060",
+        "temporal_window_0061"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S0_NORMAL_BASELINE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0003",
+    "cluster_id": 0,
+    "window_id": "temporal_window_0003",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "checkout-api",
+      "orders-api",
+      "payments-api",
+      "redis"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": 56.0,
+        "p50": 56.0,
+        "p90": 56.0
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 10,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "orders-api": [
+        "latency_p95"
+      ],
+      "checkout-api": [
+        "latency_p95"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 176.120004,
+        "max": 267.053919
+      },
+      "latency_p95_orders": {
+        "min": 160.874999,
+        "max": 258.513891
+      },
+      "latency_p95_checkout": {
+        "min": 170.468566,
+        "max": 244.569847
+      },
+      "error_rate_orders": {
+        "min": 0.008869,
+        "max": 0.015082
+      },
+      "error_rate_checkout": {
+        "min": 0.009816,
+        "max": 0.014108
+      },
+      "redis_queue_depth": {
+        "min": 20.977677,
+        "max": 38.052858
+      },
+      "redis_latency": {
+        "min": 7.575154,
+        "max": 10.915453
+      },
+      "iforest_score_payments": {
+        "min": 0.453667,
+        "max": 0.508658
+      }
+    },
+    "window_data_quality_score": 0.860951,
+    "propagation_order_confidence": 1.0,
+    "observation_period": {
+      "start": "2026-01-01T00:03:07+00:00",
+      "end": "2026-01-01T00:05:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0002",
+        "temporal_window_0003",
+        "temporal_window_0004",
+        "temporal_window_0005",
+        "temporal_window_0046",
+        "temporal_window_0047",
+        "temporal_window_0058",
+        "temporal_window_0059",
+        "temporal_window_0060",
+        "temporal_window_0061"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S0_NORMAL_BASELINE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0004",
+    "cluster_id": 0,
+    "window_id": "temporal_window_0004",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": 56.0,
+        "p50": 56.0,
+        "p90": 56.0
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 10,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 176.120004,
+        "max": 267.053919
+      },
+      "latency_p95_orders": {
+        "min": 160.874999,
+        "max": 258.513891
+      },
+      "latency_p95_checkout": {
+        "min": 170.468566,
+        "max": 244.569847
+      },
+      "error_rate_orders": {
+        "min": 0.008869,
+        "max": 0.015082
+      },
+      "error_rate_checkout": {
+        "min": 0.009816,
+        "max": 0.014108
+      },
+      "redis_queue_depth": {
+        "min": 20.977677,
+        "max": 38.052858
+      },
+      "redis_latency": {
+        "min": 7.575154,
+        "max": 10.915453
+      },
+      "iforest_score_payments": {
+        "min": 0.453667,
+        "max": 0.508658
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 1.0,
+    "observation_period": {
+      "start": "2026-01-01T00:04:07+00:00",
+      "end": "2026-01-01T00:06:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0002",
+        "temporal_window_0003",
+        "temporal_window_0004",
+        "temporal_window_0005",
+        "temporal_window_0046",
+        "temporal_window_0047",
+        "temporal_window_0058",
+        "temporal_window_0059",
+        "temporal_window_0060",
+        "temporal_window_0061"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S0_NORMAL_BASELINE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0005",
+    "cluster_id": 0,
+    "window_id": "temporal_window_0005",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": 56.0,
+        "p50": 56.0,
+        "p90": 56.0
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 10,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 176.120004,
+        "max": 267.053919
+      },
+      "latency_p95_orders": {
+        "min": 160.874999,
+        "max": 258.513891
+      },
+      "latency_p95_checkout": {
+        "min": 170.468566,
+        "max": 244.569847
+      },
+      "error_rate_orders": {
+        "min": 0.008869,
+        "max": 0.015082
+      },
+      "error_rate_checkout": {
+        "min": 0.009816,
+        "max": 0.014108
+      },
+      "redis_queue_depth": {
+        "min": 20.977677,
+        "max": 38.052858
+      },
+      "redis_latency": {
+        "min": 7.575154,
+        "max": 10.915453
+      },
+      "iforest_score_payments": {
+        "min": 0.453667,
+        "max": 0.508658
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.820675,
+    "observation_period": {
+      "start": "2026-01-01T00:05:07+00:00",
+      "end": "2026-01-01T00:07:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0002",
+        "temporal_window_0003",
+        "temporal_window_0004",
+        "temporal_window_0005",
+        "temporal_window_0046",
+        "temporal_window_0047",
+        "temporal_window_0058",
+        "temporal_window_0059",
+        "temporal_window_0060",
+        "temporal_window_0061"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S0_NORMAL_BASELINE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0011",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0011",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "checkout-api",
+      "redis",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.853002,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:11:07+00:00",
+      "end": "2026-01-01T00:13:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S1_LOCAL_ANOMALY_ONLY"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0013",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0013",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.857187,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:13:07+00:00",
+      "end": "2026-01-01T00:15:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S1_LOCAL_ANOMALY_ONLY"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0014",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0014",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "checkout-api",
+      "redis",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.853473,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:14:07+00:00",
+      "end": "2026-01-01T00:16:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S1_LOCAL_ANOMALY_ONLY"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0015",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0015",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:15:07+00:00",
+      "end": "2026-01-01T00:17:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S1_LOCAL_ANOMALY_ONLY"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0016",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0016",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:16:07+00:00",
+      "end": "2026-01-01T00:18:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S1_LOCAL_ANOMALY_ONLY"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0022",
+    "cluster_id": 1,
+    "window_id": "temporal_window_0022",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 5,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 211.613999,
+        "max": 238.351012
+      },
+      "latency_p95_orders": {
+        "min": 159.188244,
+        "max": 163.990331
+      },
+      "latency_p95_checkout": {
+        "min": 174.149484,
+        "max": 181.160196
+      },
+      "error_rate_orders": {
+        "min": 0.008623,
+        "max": 0.010277
+      },
+      "error_rate_checkout": {
+        "min": 0.009754,
+        "max": 0.010993
+      },
+      "redis_queue_depth": {
+        "min": 23.553974,
+        "max": 27.164744
+      },
+      "redis_latency": {
+        "min": 7.297015,
+        "max": 9.54794
+      },
+      "iforest_score_payments": {
+        "min": 0.542183,
+        "max": 0.609073
+      }
+    },
+    "window_data_quality_score": 0.850651,
+    "propagation_order_confidence": 1.0,
+    "observation_period": {
+      "start": "2026-01-01T00:22:07+00:00",
+      "end": "2026-01-01T00:24:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0022",
+        "temporal_window_0023",
+        "temporal_window_0026",
+        "temporal_window_0027",
+        "temporal_window_0033"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S2_SERVICE_TO_REDIS_PROPAGATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0023",
+    "cluster_id": 1,
+    "window_id": "temporal_window_0023",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 5,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 211.613999,
+        "max": 238.351012
+      },
+      "latency_p95_orders": {
+        "min": 159.188244,
+        "max": 163.990331
+      },
+      "latency_p95_checkout": {
+        "min": 174.149484,
+        "max": 181.160196
+      },
+      "error_rate_orders": {
+        "min": 0.008623,
+        "max": 0.010277
+      },
+      "error_rate_checkout": {
+        "min": 0.009754,
+        "max": 0.010993
+      },
+      "redis_queue_depth": {
+        "min": 23.553974,
+        "max": 27.164744
+      },
+      "redis_latency": {
+        "min": 7.297015,
+        "max": 9.54794
+      },
+      "iforest_score_payments": {
+        "min": 0.542183,
+        "max": 0.609073
+      }
+    },
+    "window_data_quality_score": 0.851471,
+    "propagation_order_confidence": 1.0,
+    "observation_period": {
+      "start": "2026-01-01T00:23:07+00:00",
+      "end": "2026-01-01T00:25:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0022",
+        "temporal_window_0023",
+        "temporal_window_0026",
+        "temporal_window_0027",
+        "temporal_window_0033"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S2_SERVICE_TO_REDIS_PROPAGATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0024",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0024",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.855241,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:24:07+00:00",
+      "end": "2026-01-01T00:26:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S2_SERVICE_TO_REDIS_PROPAGATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0025",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0025",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.853279,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:25:07+00:00",
+      "end": "2026-01-01T00:27:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S2_SERVICE_TO_REDIS_PROPAGATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0026",
+    "cluster_id": 1,
+    "window_id": "temporal_window_0026",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 5,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 211.613999,
+        "max": 238.351012
+      },
+      "latency_p95_orders": {
+        "min": 159.188244,
+        "max": 163.990331
+      },
+      "latency_p95_checkout": {
+        "min": 174.149484,
+        "max": 181.160196
+      },
+      "error_rate_orders": {
+        "min": 0.008623,
+        "max": 0.010277
+      },
+      "error_rate_checkout": {
+        "min": 0.009754,
+        "max": 0.010993
+      },
+      "redis_queue_depth": {
+        "min": 23.553974,
+        "max": 27.164744
+      },
+      "redis_latency": {
+        "min": 7.297015,
+        "max": 9.54794
+      },
+      "iforest_score_payments": {
+        "min": 0.542183,
+        "max": 0.609073
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 1.0,
+    "observation_period": {
+      "start": "2026-01-01T00:26:07+00:00",
+      "end": "2026-01-01T00:28:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0022",
+        "temporal_window_0023",
+        "temporal_window_0026",
+        "temporal_window_0027",
+        "temporal_window_0033"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S2_SERVICE_TO_REDIS_PROPAGATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0027",
+    "cluster_id": 1,
+    "window_id": "temporal_window_0027",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 5,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 211.613999,
+        "max": 238.351012
+      },
+      "latency_p95_orders": {
+        "min": 159.188244,
+        "max": 163.990331
+      },
+      "latency_p95_checkout": {
+        "min": 174.149484,
+        "max": 181.160196
+      },
+      "error_rate_orders": {
+        "min": 0.008623,
+        "max": 0.010277
+      },
+      "error_rate_checkout": {
+        "min": 0.009754,
+        "max": 0.010993
+      },
+      "redis_queue_depth": {
+        "min": 23.553974,
+        "max": 27.164744
+      },
+      "redis_latency": {
+        "min": 7.297015,
+        "max": 9.54794
+      },
+      "iforest_score_payments": {
+        "min": 0.542183,
+        "max": 0.609073
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 1.0,
+    "observation_period": {
+      "start": "2026-01-01T00:27:07+00:00",
+      "end": "2026-01-01T00:29:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0022",
+        "temporal_window_0023",
+        "temporal_window_0026",
+        "temporal_window_0027",
+        "temporal_window_0033"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S2_SERVICE_TO_REDIS_PROPAGATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0033",
+    "cluster_id": 1,
+    "window_id": "temporal_window_0033",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 5,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 211.613999,
+        "max": 238.351012
+      },
+      "latency_p95_orders": {
+        "min": 159.188244,
+        "max": 163.990331
+      },
+      "latency_p95_checkout": {
+        "min": 174.149484,
+        "max": 181.160196
+      },
+      "error_rate_orders": {
+        "min": 0.008623,
+        "max": 0.010277
+      },
+      "error_rate_checkout": {
+        "min": 0.009754,
+        "max": 0.010993
+      },
+      "redis_queue_depth": {
+        "min": 23.553974,
+        "max": 27.164744
+      },
+      "redis_latency": {
+        "min": 7.297015,
+        "max": 9.54794
+      },
+      "iforest_score_payments": {
+        "min": 0.542183,
+        "max": 0.609073
+      }
+    },
+    "window_data_quality_score": 0.857432,
+    "propagation_order_confidence": 1.0,
+    "observation_period": {
+      "start": "2026-01-01T00:33:07+00:00",
+      "end": "2026-01-01T00:35:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0022",
+        "temporal_window_0023",
+        "temporal_window_0026",
+        "temporal_window_0027",
+        "temporal_window_0033"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S4_INTERSERVICE_CHAIN"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0034",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0034",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "redis": [
+        "redis_latency"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.859557,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:34:07+00:00",
+      "end": "2026-01-01T00:36:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S4_INTERSERVICE_CHAIN"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0035",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0035",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "checkout-api": [
+        "latency_p95"
+      ],
+      "redis": [
+        "redis_latency"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.851957,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:35:07+00:00",
+      "end": "2026-01-01T00:37:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S4_INTERSERVICE_CHAIN"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0037",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0037",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "orders-api": [
+        "latency_p95"
+      ],
+      "checkout-api": [
+        "latency_p95"
+      ],
+      "redis": [
+        "redis_latency"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.866951,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:37:07+00:00",
+      "end": "2026-01-01T00:39:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S4_INTERSERVICE_CHAIN"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0038",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0038",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "redis",
+      "checkout-api",
+      "payments-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "orders-api": [
+        "latency_p95"
+      ],
+      "checkout-api": [
+        "latency_p95"
+      ],
+      "redis": [
+        "redis_latency"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:38:07+00:00",
+      "end": "2026-01-01T00:40:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S4_INTERSERVICE_CHAIN"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0039",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0039",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "checkout-api",
+      "payments-api",
+      "redis",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "orders-api": [
+        "latency_p95"
+      ],
+      "checkout-api": [
+        "latency_p95"
+      ],
+      "redis": [
+        "redis_latency"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:39:07+00:00",
+      "end": "2026-01-01T00:41:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S4_INTERSERVICE_CHAIN"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0046",
+    "cluster_id": 0,
+    "window_id": "temporal_window_0046",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "orders-api",
+      "redis",
+      "checkout-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": 56.0,
+        "p50": 56.0,
+        "p90": 56.0
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 10,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 176.120004,
+        "max": 267.053919
+      },
+      "latency_p95_orders": {
+        "min": 160.874999,
+        "max": 258.513891
+      },
+      "latency_p95_checkout": {
+        "min": 170.468566,
+        "max": 244.569847
+      },
+      "error_rate_orders": {
+        "min": 0.008869,
+        "max": 0.015082
+      },
+      "error_rate_checkout": {
+        "min": 0.009816,
+        "max": 0.014108
+      },
+      "redis_queue_depth": {
+        "min": 20.977677,
+        "max": 38.052858
+      },
+      "redis_latency": {
+        "min": 7.575154,
+        "max": 10.915453
+      },
+      "iforest_score_payments": {
+        "min": 0.453667,
+        "max": 0.508658
+      }
+    },
+    "window_data_quality_score": 0.854137,
+    "propagation_order_confidence": 0.925435,
+    "observation_period": {
+      "start": "2026-01-01T00:46:07+00:00",
+      "end": "2026-01-01T00:48:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0002",
+        "temporal_window_0003",
+        "temporal_window_0004",
+        "temporal_window_0005",
+        "temporal_window_0046",
+        "temporal_window_0047",
+        "temporal_window_0058",
+        "temporal_window_0059",
+        "temporal_window_0060",
+        "temporal_window_0061"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S5_DRIFT_WITHOUT_INCIDENT"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0047",
+    "cluster_id": 0,
+    "window_id": "temporal_window_0047",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "orders-api",
+      "redis",
+      "checkout-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": 56.0,
+        "p50": 56.0,
+        "p90": 56.0
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 10,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 176.120004,
+        "max": 267.053919
+      },
+      "latency_p95_orders": {
+        "min": 160.874999,
+        "max": 258.513891
+      },
+      "latency_p95_checkout": {
+        "min": 170.468566,
+        "max": 244.569847
+      },
+      "error_rate_orders": {
+        "min": 0.008869,
+        "max": 0.015082
+      },
+      "error_rate_checkout": {
+        "min": 0.009816,
+        "max": 0.014108
+      },
+      "redis_queue_depth": {
+        "min": 20.977677,
+        "max": 38.052858
+      },
+      "redis_latency": {
+        "min": 7.575154,
+        "max": 10.915453
+      },
+      "iforest_score_payments": {
+        "min": 0.453667,
+        "max": 0.508658
+      }
+    },
+    "window_data_quality_score": 0.864194,
+    "propagation_order_confidence": 0.70719,
+    "observation_period": {
+      "start": "2026-01-01T00:47:07+00:00",
+      "end": "2026-01-01T00:49:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0002",
+        "temporal_window_0003",
+        "temporal_window_0004",
+        "temporal_window_0005",
+        "temporal_window_0046",
+        "temporal_window_0047",
+        "temporal_window_0058",
+        "temporal_window_0059",
+        "temporal_window_0060",
+        "temporal_window_0061"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S5_DRIFT_WITHOUT_INCIDENT"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0049",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0049",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "orders-api",
+      "payments-api",
+      "checkout-api",
+      "redis"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:49:07+00:00",
+      "end": "2026-01-01T00:51:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S5_DRIFT_WITHOUT_INCIDENT"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0050",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0050",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "orders-api",
+      "redis",
+      "checkout-api",
+      "payments-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {},
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T00:50:07+00:00",
+      "end": "2026-01-01T00:52:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S5_DRIFT_WITHOUT_INCIDENT"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0058",
+    "cluster_id": 0,
+    "window_id": "temporal_window_0058",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "checkout-api",
+      "redis",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": 56.0,
+        "p50": 56.0,
+        "p90": 56.0
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 10,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 176.120004,
+        "max": 267.053919
+      },
+      "latency_p95_orders": {
+        "min": 160.874999,
+        "max": 258.513891
+      },
+      "latency_p95_checkout": {
+        "min": 170.468566,
+        "max": 244.569847
+      },
+      "error_rate_orders": {
+        "min": 0.008869,
+        "max": 0.015082
+      },
+      "error_rate_checkout": {
+        "min": 0.009816,
+        "max": 0.014108
+      },
+      "redis_queue_depth": {
+        "min": 20.977677,
+        "max": 38.052858
+      },
+      "redis_latency": {
+        "min": 7.575154,
+        "max": 10.915453
+      },
+      "iforest_score_payments": {
+        "min": 0.453667,
+        "max": 0.508658
+      }
+    },
+    "window_data_quality_score": 0.856013,
+    "propagation_order_confidence": 1.0,
+    "observation_period": {
+      "start": "2026-01-01T00:58:07+00:00",
+      "end": "2026-01-01T01:00:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0002",
+        "temporal_window_0003",
+        "temporal_window_0004",
+        "temporal_window_0005",
+        "temporal_window_0046",
+        "temporal_window_0047",
+        "temporal_window_0058",
+        "temporal_window_0059",
+        "temporal_window_0060",
+        "temporal_window_0061"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S6_NOISE_FALSE_POSITIVE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0059",
+    "cluster_id": 0,
+    "window_id": "temporal_window_0059",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": 56.0,
+        "p50": 56.0,
+        "p90": 56.0
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 10,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 176.120004,
+        "max": 267.053919
+      },
+      "latency_p95_orders": {
+        "min": 160.874999,
+        "max": 258.513891
+      },
+      "latency_p95_checkout": {
+        "min": 170.468566,
+        "max": 244.569847
+      },
+      "error_rate_orders": {
+        "min": 0.008869,
+        "max": 0.015082
+      },
+      "error_rate_checkout": {
+        "min": 0.009816,
+        "max": 0.014108
+      },
+      "redis_queue_depth": {
+        "min": 20.977677,
+        "max": 38.052858
+      },
+      "redis_latency": {
+        "min": 7.575154,
+        "max": 10.915453
+      },
+      "iforest_score_payments": {
+        "min": 0.453667,
+        "max": 0.508658
+      }
+    },
+    "window_data_quality_score": 0.866667,
+    "propagation_order_confidence": 0.667149,
+    "observation_period": {
+      "start": "2026-01-01T00:59:07+00:00",
+      "end": "2026-01-01T01:01:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0002",
+        "temporal_window_0003",
+        "temporal_window_0004",
+        "temporal_window_0005",
+        "temporal_window_0046",
+        "temporal_window_0047",
+        "temporal_window_0058",
+        "temporal_window_0059",
+        "temporal_window_0060",
+        "temporal_window_0061"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S6_NOISE_FALSE_POSITIVE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0060",
+    "cluster_id": 0,
+    "window_id": "temporal_window_0060",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "redis",
+      "payments-api",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": 56.0,
+        "p50": 56.0,
+        "p90": 56.0
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 10,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 176.120004,
+        "max": 267.053919
+      },
+      "latency_p95_orders": {
+        "min": 160.874999,
+        "max": 258.513891
+      },
+      "latency_p95_checkout": {
+        "min": 170.468566,
+        "max": 244.569847
+      },
+      "error_rate_orders": {
+        "min": 0.008869,
+        "max": 0.015082
+      },
+      "error_rate_checkout": {
+        "min": 0.009816,
+        "max": 0.014108
+      },
+      "redis_queue_depth": {
+        "min": 20.977677,
+        "max": 38.052858
+      },
+      "redis_latency": {
+        "min": 7.575154,
+        "max": 10.915453
+      },
+      "iforest_score_payments": {
+        "min": 0.453667,
+        "max": 0.508658
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.813847,
+    "observation_period": {
+      "start": "2026-01-01T01:00:07+00:00",
+      "end": "2026-01-01T01:02:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0002",
+        "temporal_window_0003",
+        "temporal_window_0004",
+        "temporal_window_0005",
+        "temporal_window_0046",
+        "temporal_window_0047",
+        "temporal_window_0058",
+        "temporal_window_0059",
+        "temporal_window_0060",
+        "temporal_window_0061"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S6_NOISE_FALSE_POSITIVE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0061",
+    "cluster_id": 0,
+    "window_id": "temporal_window_0061",
+    "detected": true,
+    "noise": false,
+    "services_chain_observed": [
+      "payments-api",
+      "checkout-api",
+      "redis",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": 56.0,
+        "p50": 56.0,
+        "p90": 56.0
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 10,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 176.120004,
+        "max": 267.053919
+      },
+      "latency_p95_orders": {
+        "min": 160.874999,
+        "max": 258.513891
+      },
+      "latency_p95_checkout": {
+        "min": 170.468566,
+        "max": 244.569847
+      },
+      "error_rate_orders": {
+        "min": 0.008869,
+        "max": 0.015082
+      },
+      "error_rate_checkout": {
+        "min": 0.009816,
+        "max": 0.014108
+      },
+      "redis_queue_depth": {
+        "min": 20.977677,
+        "max": 38.052858
+      },
+      "redis_latency": {
+        "min": 7.575154,
+        "max": 10.915453
+      },
+      "iforest_score_payments": {
+        "min": 0.453667,
+        "max": 0.508658
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 1.0,
+    "observation_period": {
+      "start": "2026-01-01T01:01:07+00:00",
+      "end": "2026-01-01T01:03:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0002",
+        "temporal_window_0003",
+        "temporal_window_0004",
+        "temporal_window_0005",
+        "temporal_window_0046",
+        "temporal_window_0047",
+        "temporal_window_0058",
+        "temporal_window_0059",
+        "temporal_window_0060",
+        "temporal_window_0061"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S6_NOISE_FALSE_POSITIVE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0067",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0067",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.855187,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T01:07:07+00:00",
+      "end": "2026-01-01T01:09:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S7_RECOVERY_AFTER_DEGRADATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0068",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0068",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.853428,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T01:08:07+00:00",
+      "end": "2026-01-01T01:10:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S7_RECOVERY_AFTER_DEGRADATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0069",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0069",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "redis",
+      "payments-api",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "redis": [
+        "redis_latency"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.854935,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T01:09:07+00:00",
+      "end": "2026-01-01T01:11:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S7_RECOVERY_AFTER_DEGRADATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0071",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0071",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "checkout-api": [
+        "latency_p95"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.855176,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T01:11:07+00:00",
+      "end": "2026-01-01T01:13:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S7_RECOVERY_AFTER_DEGRADATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0072",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0072",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "checkout-api",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T01:12:07+00:00",
+      "end": "2026-01-01T01:14:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S7_RECOVERY_AFTER_DEGRADATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0073",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0073",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "checkout-api",
+      "payments-api",
+      "redis",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T01:13:07+00:00",
+      "end": "2026-01-01T01:15:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S7_RECOVERY_AFTER_DEGRADATION"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0079",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0079",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "checkout-api",
+      "redis",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "checkout-api": [
+        "latency_p95"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.851636,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T01:19:07+00:00",
+      "end": "2026-01-01T01:21:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S8_HIGH_DENSITY_UNCORRELATED_NOISE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0081",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0081",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "checkout-api",
+      "payments-api",
+      "redis",
+      "orders-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "iforest_score"
+      ],
+      "checkout-api": [
+        "latency_p95"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.853428,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T01:21:07+00:00",
+      "end": "2026-01-01T01:23:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S8_HIGH_DENSITY_UNCORRELATED_NOISE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0082",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0082",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "orders-api",
+      "redis",
+      "checkout-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "orders-api": [
+        "latency_p95"
+      ],
+      "checkout-api": [
+        "latency_p95"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 0.860455,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T01:22:07+00:00",
+      "end": "2026-01-01T01:24:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S8_HIGH_DENSITY_UNCORRELATED_NOISE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0083",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0083",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "orders-api",
+      "checkout-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "orders-api": [
+        "latency_p95"
+      ],
+      "redis": [
+        "redis_latency"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T01:23:07+00:00",
+      "end": "2026-01-01T01:25:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S8_HIGH_DENSITY_UNCORRELATED_NOISE"
+    }
+  },
+  {
+    "schema_version": "propagation_signature_v0_1",
+    "signature_id": "prop_sig_temporal_window_0084",
+    "cluster_id": -1,
+    "window_id": "temporal_window_0084",
+    "detected": false,
+    "noise": true,
+    "services_chain_observed": [
+      "payments-api",
+      "redis",
+      "orders-api",
+      "checkout-api"
+    ],
+    "lag_pattern_seconds_ci": {
+      "payments-api_to_redis": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "redis_to_checkout-api": {
+        "p10": null,
+        "p50": null,
+        "p90": null
+      }
+    },
+    "lag_ci_metadata": {
+      "lag_ci_method": "observed_percentiles_p10_p50_p90",
+      "sample_window_count": 25,
+      "minimum_windows_for_precision": 30,
+      "precision": "imprecise"
+    },
+    "affected_metrics": {
+      "payments-api": [
+        "latency_p95",
+        "iforest_score"
+      ],
+      "orders-api": [
+        "latency_p95"
+      ],
+      "redis": [
+        "redis_latency"
+      ]
+    },
+    "metric_ranges_observed": {
+      "latency_p95_payments": {
+        "min": 172.349543,
+        "max": 308.163087
+      },
+      "latency_p95_orders": {
+        "min": 158.9215,
+        "max": 237.857035
+      },
+      "latency_p95_checkout": {
+        "min": 170.765557,
+        "max": 252.737398
+      },
+      "error_rate_orders": {
+        "min": 0.008619,
+        "max": 0.017107
+      },
+      "error_rate_checkout": {
+        "min": 0.010021,
+        "max": 0.019078
+      },
+      "redis_queue_depth": {
+        "min": 22.375541,
+        "max": 38.941618
+      },
+      "redis_latency": {
+        "min": 7.346382,
+        "max": 11.720899
+      },
+      "iforest_score_payments": {
+        "min": 0.441138,
+        "max": 0.789456
+      }
+    },
+    "window_data_quality_score": 1.0,
+    "propagation_order_confidence": 0.0,
+    "observation_period": {
+      "start": "2026-01-01T01:24:07+00:00",
+      "end": "2026-01-01T01:26:07+00:00"
+    },
+    "evidence": {
+      "features_used": [
+        "iforest_score_max",
+        "iforest_score_mean",
+        "iforest_score_spread",
+        "latency_p95_payments",
+        "latency_p95_orders",
+        "latency_p95_checkout",
+        "delta_latency_orders",
+        "delta_latency_checkout",
+        "error_rate_payments",
+        "error_rate_orders",
+        "error_rate_checkout",
+        "redis_queue_depth",
+        "redis_latency",
+        "window_anomaly_density",
+        "lag_payments_to_redis",
+        "lag_redis_to_checkout",
+        "service_degradation_order_encoded"
+      ],
+      "source_windows": [
+        "temporal_window_0011",
+        "temporal_window_0013",
+        "temporal_window_0014",
+        "temporal_window_0015",
+        "temporal_window_0016",
+        "temporal_window_0024",
+        "temporal_window_0025",
+        "temporal_window_0034",
+        "temporal_window_0035",
+        "temporal_window_0037",
+        "temporal_window_0038",
+        "temporal_window_0039",
+        "temporal_window_0049",
+        "temporal_window_0050",
+        "temporal_window_0067",
+        "temporal_window_0068",
+        "temporal_window_0069",
+        "temporal_window_0071",
+        "temporal_window_0072",
+        "temporal_window_0073",
+        "temporal_window_0079",
+        "temporal_window_0081",
+        "temporal_window_0082",
+        "temporal_window_0083",
+        "temporal_window_0084"
+      ],
+      "backend_executed": "hdbscan",
+      "scenario_tag": "S8_HIGH_DENSITY_UNCORRELATED_NOISE"
+    }
+  }
+]

@@ -1,0 +1,8 @@
+schema_version: agentic_reasoning_flow_v0_1
+steps:
+  - triage
+  - context_review
+  - diagnosis
+  - confidence_validation
+  - recommendation
+  - report

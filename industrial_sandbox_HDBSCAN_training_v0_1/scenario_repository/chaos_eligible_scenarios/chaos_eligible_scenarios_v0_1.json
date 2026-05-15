@@ -1,0 +1,30 @@
+{
+  "schema_version": "scenario_partition_v0_1",
+  "partition": "chaos_eligible",
+  "scenarios": [
+    {
+      "profile_id": "eligible_s2_service_to_redis",
+      "scenario_name": "S2_SERVICE_TO_REDIS_PROPAGATION",
+      "eligibility_basis": "clear two-hop propagation with bounded blast radius",
+      "recommended_status": "draft"
+    },
+    {
+      "profile_id": "eligible_s3_redis_multiservice",
+      "scenario_name": "S3_REDIS_TO_MULTISERVICE_PROPAGATION",
+      "eligibility_basis": "branching propagation useful for future stress tests",
+      "recommended_status": "requires_review"
+    },
+    {
+      "profile_id": "eligible_s4_interservice_chain",
+      "scenario_name": "S4_INTERSERVICE_CHAIN",
+      "eligibility_basis": "canonical chain with observable lag pattern",
+      "recommended_status": "draft"
+    },
+    {
+      "profile_id": "eligible_s7_recovery",
+      "scenario_name": "S7_RECOVERY_AFTER_DEGRADATION",
+      "eligibility_basis": "useful for future replay with recovery checks",
+      "recommended_status": "requires_review"
+    }
+  ]
+}

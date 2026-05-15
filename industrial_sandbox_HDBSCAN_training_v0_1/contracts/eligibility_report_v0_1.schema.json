@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EligibilityReportV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_signature_id",
+    "eligible",
+    "eligibility_score",
+    "risk_score",
+    "recommended_status",
+    "preconditions",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "eligibility_report_v0_1"},
+    "source_signature_id": {"type": "string"},
+    "eligible": {"type": "boolean"},
+    "eligibility_score": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "risk_score": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "recommended_status": {"type": "string", "enum": ["draft", "requires_review", "not_suitable"]},
+    "preconditions": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

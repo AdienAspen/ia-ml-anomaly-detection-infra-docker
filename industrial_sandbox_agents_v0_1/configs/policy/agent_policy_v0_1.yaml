@@ -1,0 +1,9 @@
+schema_version: agent_policy_v0_1
+mode: read_only
+human_approval_required: true
+prohibited_actions:
+  - restart_services
+  - delete_files
+  - change_configs
+  - access_secrets
+  - commit_to_main

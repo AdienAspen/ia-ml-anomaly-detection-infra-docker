@@ -1,0 +1,1 @@
+"""Tool allowlist enforcement placeholder."""

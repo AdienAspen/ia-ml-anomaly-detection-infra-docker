@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ConfidenceVectorV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "confidence_score",
+    "evidence_strength",
+    "retrieval_quality",
+    "tool_success_rate",
+    "model_uncertainty",
+    "policy_status",
+    "human_review_required",
+    "reason"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "event_id": {"type": "string"},
+    "confidence_score": {"type": "number"},
+    "evidence_strength": {"type": "string"},
+    "retrieval_quality": {"type": "string"},
+    "tool_success_rate": {"type": "number"},
+    "model_uncertainty": {"type": "string"},
+    "policy_status": {"type": "string"},
+    "human_review_required": {"type": "boolean"},
+    "reason": {"type": "string"}
+  }
+}

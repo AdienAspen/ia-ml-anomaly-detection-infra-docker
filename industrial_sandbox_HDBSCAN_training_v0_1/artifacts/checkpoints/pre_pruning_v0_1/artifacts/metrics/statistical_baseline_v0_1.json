@@ -1,0 +1,183 @@
+{
+  "schema_version": "statistical_baseline_v0_1",
+  "created_at": "2026-05-12T20:22:25.929337+00:00",
+  "eligible_window_count": 40,
+  "features": {
+    "iforest_score_payments": {
+      "count": 40,
+      "mean": 0.367671,
+      "std_dev": 0.086393,
+      "min": 0.23971,
+      "p50": 0.379126,
+      "p90": 0.467221,
+      "p95": 0.509224,
+      "max": 0.512114,
+      "zero_ratio": 0.0
+    },
+    "iforest_score_orders": {
+      "count": 40,
+      "mean": 0.315769,
+      "std_dev": 0.067493,
+      "min": 0.25198,
+      "p50": 0.286535,
+      "p90": 0.450304,
+      "p95": 0.458906,
+      "max": 0.463033,
+      "zero_ratio": 0.0
+    },
+    "iforest_score_checkout": {
+      "count": 40,
+      "mean": 0.346332,
+      "std_dev": 0.061612,
+      "min": 0.287143,
+      "p50": 0.317204,
+      "p90": 0.429034,
+      "p95": 0.48168,
+      "max": 0.496632,
+      "zero_ratio": 0.0
+    },
+    "latency_p95_payments": {
+      "count": 40,
+      "mean": 228.982706,
+      "std_dev": 37.727416,
+      "min": 172.349543,
+      "p50": 226.049303,
+      "p90": 269.427627,
+      "p95": 299.386302,
+      "max": 308.163087,
+      "zero_ratio": 0.0
+    },
+    "latency_p95_orders": {
+      "count": 40,
+      "mean": 180.171703,
+      "std_dev": 25.952892,
+      "min": 158.9215,
+      "p50": 165.816532,
+      "p90": 226.459584,
+      "p95": 235.1652,
+      "max": 237.857035,
+      "zero_ratio": 0.0
+    },
+    "latency_p95_checkout": {
+      "count": 40,
+      "mean": 193.069281,
+      "std_dev": 25.277896,
+      "min": 170.468566,
+      "p50": 180.032813,
+      "p90": 233.679356,
+      "p95": 252.352244,
+      "max": 252.737398,
+      "zero_ratio": 0.0
+    },
+    "error_rate_payments": {
+      "count": 40,
+      "mean": 0.015031,
+      "std_dev": 0.002579,
+      "min": 0.010264,
+      "p50": 0.01471,
+      "p90": 0.019067,
+      "p95": 0.019636,
+      "max": 0.020457,
+      "zero_ratio": 0.0
+    },
+    "error_rate_orders": {
+      "count": 40,
+      "mean": 0.010992,
+      "std_dev": 0.002181,
+      "min": 0.008619,
+      "p50": 0.010051,
+      "p90": 0.014448,
+      "p95": 0.015183,
+      "max": 0.017107,
+      "zero_ratio": 0.0
+    },
+    "error_rate_checkout": {
+      "count": 40,
+      "mean": 0.011909,
+      "std_dev": 0.002112,
+      "min": 0.009754,
+      "p50": 0.011237,
+      "p90": 0.014936,
+      "p95": 0.015794,
+      "max": 0.019078,
+      "zero_ratio": 0.0
+    },
+    "redis_queue_depth": {
+      "count": 40,
+      "mean": 27.828953,
+      "std_dev": 4.560833,
+      "min": 20.977677,
+      "p50": 27.063245,
+      "p90": 34.710519,
+      "p95": 35.686134,
+      "max": 38.941618,
+      "zero_ratio": 0.0
+    },
+    "redis_latency": {
+      "count": 40,
+      "mean": 8.848689,
+      "std_dev": 1.311131,
+      "min": 7.297015,
+      "p50": 8.383814,
+      "p90": 10.798923,
+      "p95": 11.048698,
+      "max": 11.720899,
+      "zero_ratio": 0.0
+    },
+    "window_anomaly_density": {
+      "count": 40,
+      "mean": 0.0,
+      "std_dev": 0.0,
+      "min": 0.0,
+      "p50": 0.0,
+      "p90": 0.0,
+      "p95": 0.0,
+      "max": 0.0,
+      "zero_ratio": 1.0
+    },
+    "lag_payments_to_redis": {
+      "count": 40,
+      "mean": 11.525,
+      "std_dev": 25.911375,
+      "min": 0.0,
+      "p50": 0.0,
+      "p90": 44.0,
+      "p95": 74.65,
+      "max": 105.0,
+      "zero_ratio": 0.725
+    },
+    "lag_redis_to_checkout": {
+      "count": 40,
+      "mean": 4.025,
+      "std_dev": 12.820857,
+      "min": 0.0,
+      "p50": 0.0,
+      "p90": 17.0,
+      "p95": 20.5,
+      "max": 73.0,
+      "zero_ratio": 0.85
+    },
+    "service_degradation_order_encoded": {
+      "count": 40,
+      "mean": 1106.7,
+      "std_dev": 995.4712,
+      "min": 123.0,
+      "p50": 316.5,
+      "p90": 2310.0,
+      "p95": 2345.55,
+      "max": 3210.0,
+      "zero_ratio": 0.0
+    },
+    "window_data_quality_score": {
+      "count": 40,
+      "mean": 0.913974,
+      "std_dev": 0.070333,
+      "min": 0.850651,
+      "p50": 0.861756,
+      "p90": 1.0,
+      "p95": 1.0,
+      "max": 1.0,
+      "zero_ratio": 0.0
+    }
+  }
+}

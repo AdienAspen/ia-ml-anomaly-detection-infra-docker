@@ -1,0 +1,9 @@
+schema_version: event_bus_config_v0_1
+backend: redis
+publish_channel: telemetry.enriched_anomaly
+consume_channel: telemetry.enriched_anomaly
+future_compatible_backends:
+  - kafka
+  - redpanda
+  - nats
+  - pulsar

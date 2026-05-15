@@ -1,0 +1,807 @@
+[
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0002",
+    "eligible": true,
+    "eligibility_score": 0.96564,
+    "risk_score": 0.377488,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720093+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0003",
+    "eligible": true,
+    "eligibility_score": 0.965238,
+    "risk_score": 0.37781,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720104+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0004",
+    "eligible": true,
+    "eligibility_score": 1.0,
+    "risk_score": 0.35,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720111+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0005",
+    "eligible": true,
+    "eligibility_score": 0.964135,
+    "risk_score": 0.385865,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720116+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0011",
+    "eligible": false,
+    "eligibility_score": 0.413251,
+    "risk_score": 0.6794,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720124+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0013",
+    "eligible": false,
+    "eligibility_score": 0.414297,
+    "risk_score": 0.678563,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720130+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0014",
+    "eligible": false,
+    "eligibility_score": 0.413368,
+    "risk_score": 0.679305,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720136+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0015",
+    "eligible": false,
+    "eligibility_score": 0.45,
+    "risk_score": 0.65,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720142+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0016",
+    "eligible": false,
+    "eligibility_score": 0.45,
+    "risk_score": 0.65,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720148+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0022",
+    "eligible": true,
+    "eligibility_score": 0.962663,
+    "risk_score": 0.37987,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720153+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0023",
+    "eligible": true,
+    "eligibility_score": 0.962868,
+    "risk_score": 0.379706,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720159+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0024",
+    "eligible": false,
+    "eligibility_score": 0.41381,
+    "risk_score": 0.678952,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720164+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0025",
+    "eligible": false,
+    "eligibility_score": 0.41332,
+    "risk_score": 0.679344,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720170+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0026",
+    "eligible": true,
+    "eligibility_score": 1.0,
+    "risk_score": 0.35,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720176+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0027",
+    "eligible": true,
+    "eligibility_score": 1.0,
+    "risk_score": 0.35,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720181+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0033",
+    "eligible": true,
+    "eligibility_score": 0.964358,
+    "risk_score": 0.378514,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720186+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0034",
+    "eligible": false,
+    "eligibility_score": 0.414889,
+    "risk_score": 0.678089,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720192+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0035",
+    "eligible": false,
+    "eligibility_score": 0.412989,
+    "risk_score": 0.679609,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720198+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0037",
+    "eligible": false,
+    "eligibility_score": 0.416738,
+    "risk_score": 0.67661,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720203+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0038",
+    "eligible": false,
+    "eligibility_score": 0.45,
+    "risk_score": 0.65,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720209+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0039",
+    "eligible": false,
+    "eligibility_score": 0.45,
+    "risk_score": 0.65,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720215+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0046",
+    "eligible": true,
+    "eligibility_score": 0.948621,
+    "risk_score": 0.394086,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720220+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0047",
+    "eligible": true,
+    "eligibility_score": 0.907487,
+    "risk_score": 0.435723,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720226+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0049",
+    "eligible": false,
+    "eligibility_score": 0.45,
+    "risk_score": 0.65,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720231+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0050",
+    "eligible": false,
+    "eligibility_score": 0.45,
+    "risk_score": 0.65,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720237+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0058",
+    "eligible": true,
+    "eligibility_score": 0.964003,
+    "risk_score": 0.378797,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720242+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0059",
+    "eligible": true,
+    "eligibility_score": 0.900097,
+    "risk_score": 0.443237,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720247+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0060",
+    "eligible": true,
+    "eligibility_score": 0.962769,
+    "risk_score": 0.387231,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720253+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0061",
+    "eligible": true,
+    "eligibility_score": 1.0,
+    "risk_score": 0.35,
+    "recommended_status": "draft",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [],
+    "evaluated_at": "2026-05-12T23:31:43.720258+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0067",
+    "eligible": false,
+    "eligibility_score": 0.413797,
+    "risk_score": 0.678963,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720264+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0068",
+    "eligible": false,
+    "eligibility_score": 0.413357,
+    "risk_score": 0.679314,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720269+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0069",
+    "eligible": false,
+    "eligibility_score": 0.413734,
+    "risk_score": 0.679013,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720275+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0071",
+    "eligible": false,
+    "eligibility_score": 0.413794,
+    "risk_score": 0.678965,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720280+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0072",
+    "eligible": false,
+    "eligibility_score": 0.45,
+    "risk_score": 0.65,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720286+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0073",
+    "eligible": false,
+    "eligibility_score": 0.45,
+    "risk_score": 0.65,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720292+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0079",
+    "eligible": false,
+    "eligibility_score": 0.412909,
+    "risk_score": 0.679673,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720297+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0081",
+    "eligible": false,
+    "eligibility_score": 0.413357,
+    "risk_score": 0.679314,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720303+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0082",
+    "eligible": false,
+    "eligibility_score": 0.415114,
+    "risk_score": 0.677909,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720308+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0083",
+    "eligible": false,
+    "eligibility_score": 0.45,
+    "risk_score": 0.65,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720332+00:00"
+  },
+  {
+    "schema_version": "eligibility_report_v0_1",
+    "source_signature_id": "prop_sig_temporal_window_0084",
+    "eligible": false,
+    "eligibility_score": 0.45,
+    "risk_score": 0.65,
+    "recommended_status": "requires_review",
+    "preconditions": [
+      "requires isolated lab environment",
+      "requires Redis test instance",
+      "requires non-production service endpoints",
+      "requires Redis dependency isolation before replay",
+      "requires bounded multi-service blast-radius controls"
+    ],
+    "warnings": [
+      "signature flagged as noise in the defensive lane",
+      "risk score is elevated and requires human review",
+      "payments-api_to_redis shows moderate or high variance",
+      "redis_to_checkout-api shows moderate or high variance"
+    ],
+    "evaluated_at": "2026-05-12T23:31:43.720343+00:00"
+  }
+]

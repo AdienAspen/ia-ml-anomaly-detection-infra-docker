@@ -1,0 +1,37 @@
+{
+  "model_name": "isolation_forest",
+  "model_version": "baseline_v1",
+  "artifact_type": "joblib",
+  "feature_contract": "feature_contract_v1",
+  "training_dataset": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_ml_training_v0_1/data/processed/training_normal_v1.parquet",
+  "validation_dataset": "data/processed/validation_mixed_v1.parquet",
+  "hyperparameters": {
+    "n_estimators": 300,
+    "max_samples": "auto",
+    "contamination": 0.02,
+    "random_state": 42
+  },
+  "thresholds": {
+    "anomaly_score_threshold": 0.7129212699803884,
+    "min_flag_window": 3
+  },
+  "metrics": {
+    "training_metrics_path": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_ml_training_v0_1/artifacts/metrics/training_baseline_metrics.json",
+    "validation_metrics_path": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_ml_training_v0_1/artifacts/metrics/validation_metrics.json",
+    "false_positive_rate_on_normal": 0.0012032487716835455,
+    "flag_rate_on_anomalous": 0.043478260869565216,
+    "flag_rate_overall": 0.020055555555555556
+  },
+  "created_at": "2026-04-21T21:52:22.079530+00:00",
+  "package_metadata": {
+    "source_dir": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_ml_training_v0_1/artifacts/models/isolation_forest/baseline_v1",
+    "target_dir": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_ml_training_v0_1/artifacts/models/isolation_forest/packages/baseline_v1",
+    "copied_files": [
+      "model.joblib",
+      "training_manifest.json",
+      "feature_contract.json",
+      "validation_metrics.json",
+      "threshold_recommendation.json"
+    ]
+  }
+}

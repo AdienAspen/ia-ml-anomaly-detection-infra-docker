@@ -1,0 +1,54 @@
+{
+  "schema_version": "scenario_partition_v0_1",
+  "partition": "validation",
+  "scenarios": [
+    {
+      "profile_id": "val_s0_baseline_holdout",
+      "scenario_name": "S0_NORMAL_BASELINE",
+      "seed": 401,
+      "steps": 10,
+      "interval_seconds": 30,
+      "notes": ["holdout baseline"]
+    },
+    {
+      "profile_id": "val_s2_service_to_redis_holdout",
+      "scenario_name": "S2_SERVICE_TO_REDIS_PROPAGATION",
+      "seed": 421,
+      "steps": 11,
+      "interval_seconds": 30,
+      "notes": ["holdout propagation positive"]
+    },
+    {
+      "profile_id": "val_s3_redis_multiservice_holdout",
+      "scenario_name": "S3_REDIS_TO_MULTISERVICE_PROPAGATION",
+      "seed": 431,
+      "steps": 12,
+      "interval_seconds": 30,
+      "notes": ["branching holdout positive"]
+    },
+    {
+      "profile_id": "val_s4_chain_holdout",
+      "scenario_name": "S4_INTERSERVICE_CHAIN",
+      "seed": 441,
+      "steps": 14,
+      "interval_seconds": 30,
+      "notes": ["multi-hop holdout positive"]
+    },
+    {
+      "profile_id": "val_s6_noise_holdout",
+      "scenario_name": "S6_NOISE_FALSE_POSITIVE",
+      "seed": 461,
+      "steps": 11,
+      "interval_seconds": 30,
+      "notes": ["noise holdout negative"]
+    },
+    {
+      "profile_id": "val_s8_dense_noise_holdout",
+      "scenario_name": "S8_HIGH_DENSITY_UNCORRELATED_NOISE",
+      "seed": 481,
+      "steps": 11,
+      "interval_seconds": 30,
+      "notes": ["dense-noise holdout negative"]
+    }
+  ]
+}

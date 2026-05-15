@@ -1,0 +1,15 @@
+{
+  "checkpoint_name": "hybrid_absolute_delta_v0_1",
+  "baseline_snapshot": {
+    "feature_count": 17,
+    "eligible_window_count_train": 40,
+    "low_quality_window_count_train": 24,
+    "propagation_detection_rate": 0.631579,
+    "false_propagation_rate": 0.875,
+    "precision": 0.125,
+    "noise_rejection_rate": 0.125,
+    "propagation_order_accuracy": 0.526316,
+    "cluster_stability_validation": 0.346154,
+    "cluster_stability_bootstrap": 0.537932
+  }
+}

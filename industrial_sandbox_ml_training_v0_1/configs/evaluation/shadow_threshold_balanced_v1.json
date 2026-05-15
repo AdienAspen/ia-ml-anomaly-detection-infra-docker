@@ -1,0 +1,14 @@
+{
+  "profile_name": "shadow_threshold_balanced_v1",
+  "mode": "shadow",
+  "model_family": "isolation_forest",
+  "source_threshold_sweep": "artifacts/reports/threshold_sweep_v1.json",
+  "selected_operating_profile": "balanced",
+  "anomaly_score_threshold": 0.695655885893105,
+  "min_flag_window": 3,
+  "notes": [
+    "Balanced operating profile selected from the threshold sweep.",
+    "Use in shadow mode before promoting to operational thresholding.",
+    "Review min_flag_window after contamination retuning."
+  ]
+}

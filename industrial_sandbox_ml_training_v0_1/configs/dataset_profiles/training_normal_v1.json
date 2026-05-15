@@ -1,0 +1,53 @@
+{
+  "dataset_name": "training_normal_v1",
+  "dataset_purpose": "training",
+  "version": "1.0.0",
+  "telemetry_profile": "market_aware_v1",
+  "feature_contract": "feature_contract_v1",
+  "row_count_target": 72000,
+  "services": [
+    "payments-api",
+    "orders-api",
+    "checkout-api"
+  ],
+  "service_balance_mode": "homogeneous",
+  "scenario_mix": {
+    "normal": 0.996,
+    "anomalous": 0.004
+  },
+  "residual_anomaly_control": {
+    "enabled": true,
+    "target_rate": 0.004,
+    "service_balanced": true,
+    "selection_mode": "high_stress_tail",
+    "minimum_count": 21
+  },
+  "behavioral_requirements": {
+    "light_seasonality": true,
+    "moderate_drift": true,
+    "credible_bursts": true,
+    "gradual_degradation": false
+  },
+  "timeline": {
+    "start_timestamp": "2026-04-20T00:00:00-04:00",
+    "interval_seconds": 1.0
+  },
+  "source_defaults": {
+    "source_node": "node-01"
+  },
+  "storage": {
+    "format": "parquet",
+    "relative_path": "data/processed/training_normal_v1.parquet"
+  },
+  "source_reference": {
+    "source_repo": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_v0_1",
+    "reference_datasets": [
+      "training_normal_v1",
+      "validation_mixed_v1"
+    ]
+  },
+  "reproducibility": {
+    "random_seed": 42,
+    "generator_version": "offline_market_aware_v1"
+  }
+}

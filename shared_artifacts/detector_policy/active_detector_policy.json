@@ -1,0 +1,5 @@
+{
+  "schema_version": "detector_policy_alias_v1",
+  "active_policy_path": "shadow_threshold_service_v1/iforest_detector_policy_v1.json",
+  "updated_at": "2026-04-23T23:24:53.648774+00:00"
+}

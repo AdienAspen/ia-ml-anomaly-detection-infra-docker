@@ -1,0 +1,12 @@
+{
+  "diagnostic_name": "decision_diagnostics_v1",
+  "model_dir": "artifacts/models/isolation_forest/baseline_v1",
+  "validation_dataset": "data/processed/validation_mixed_v1.parquet",
+  "shadow_threshold_profile": "configs/evaluation/shadow_threshold_balanced_v1.json",
+  "output_prefix": "decision_diagnostics_v1",
+  "top_n_outliers_per_policy": 12,
+  "service_threshold_policy": {
+    "calibrate_from_normal_slice": true,
+    "match_global_false_positive_rate": true
+  }
+}

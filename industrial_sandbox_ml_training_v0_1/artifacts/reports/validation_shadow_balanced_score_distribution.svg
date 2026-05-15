@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+  <rect width="900" height="420" fill="#fbfaf6" />
+  <line x1="70" y1="30" x2="70" y2="380" stroke="#222" stroke-width="1.5"/>
+  <line x1="70" y1="380" x2="870" y2="380" stroke="#222" stroke-width="1.5"/>
+  <text x="70" y="20" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#222">Anomaly score distribution: normal vs anomalous</text>
+  <polyline fill="none" stroke="#1f77b4" stroke-width="3" points="70.00,372.92 104.78,352.91 139.57,340.39 174.35,333.72 209.13,336.02 243.91,344.26 278.70,350.52 313.48,353.40 348.26,359.66 383.04,361.06 417.83,359.66 452.61,363.53 487.39,364.52 522.17,362.95 556.96,361.22 591.74,357.02 626.52,350.44 661.30,336.68 696.09,292.71 730.87,287.76 765.65,306.29 800.43,323.59 835.22,348.95 870.00,378.52" />
+  <polyline fill="none" stroke="#c0392b" stroke-width="3" points="70.00,380.00 104.78,380.00 139.57,380.00 174.35,380.00 209.13,379.67 243.91,379.34 278.70,378.93 313.48,378.52 348.26,377.45 383.04,377.04 417.83,376.46 452.61,376.62 487.39,376.54 522.17,376.62 556.96,377.86 591.74,377.86 626.52,377.61 661.30,376.46 696.09,359.33 730.87,335.86 765.65,305.72 800.43,279.12 835.22,30.00 870.00,341.95" />
+  <text x="700" y="40" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1f77b4">normal</text>
+  <text x="780" y="40" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#c0392b">anomalous</text>
+  <text x="70" y="410" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444">min 0.391</text>
+  <text x="790" y="410" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444">max 0.725</text>
+</svg>

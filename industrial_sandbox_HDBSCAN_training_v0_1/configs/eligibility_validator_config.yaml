@@ -1,0 +1,8 @@
+schema_version: eligibility_validator_config_v0_1
+mode: read_only
+score_range: [0.0, 1.0]
+risk_range: [0.0, 1.0]
+recommended_status_values:
+  - draft
+  - requires_review
+  - not_suitable

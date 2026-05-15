@@ -1,0 +1,39 @@
+{
+  "schema_version": "iforest_detector_policy_v1",
+  "policy_name": "iforest_detector_policy_v1",
+  "policy_version": "shadow_threshold_service_v1",
+  "runtime_mode": "shadow",
+  "model_path": "model.joblib",
+  "scoring_policy": "score_samples",
+  "threshold_mode": "service_specific",
+  "threshold_by_service": {
+    "checkout-api": 0.691832591180323,
+    "orders-api": 0.6712653569641552,
+    "payments-api": 0.7016270755997039
+  },
+  "min_flag_window": 3,
+  "expected_features": [
+    "cpu_pct",
+    "memory_pct",
+    "latency_ms",
+    "disk_io_pct",
+    "net_error_rate",
+    "queue_length",
+    "throughput_rate",
+    "http_5xx_rate"
+  ],
+  "validation_summary": {
+    "true_positive_rate_on_anomalous": 0.719820605456584,
+    "false_positive_rate_on_normal": 0.0487315752531836,
+    "service_flag_rate_span": 0.055333333333333345,
+    "burst_proxy_flag_rate": 0.9737903225806451,
+    "late_drift_flag_rate": 0.8325163398692811
+  },
+  "promoted_from": {
+    "block": "1B",
+    "model_package": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_ml_training_v0_1/artifacts/models/isolation_forest/baseline_v1/model.joblib",
+    "decision_diagnostics_report": "artifacts/reports/decision_diagnostics_v1.json",
+    "shadow_report": "artifacts/reports/shadow_service_thresholds_v1.json"
+  },
+  "promoted_at": "2026-04-23T23:58:58.524944+00:00"
+}

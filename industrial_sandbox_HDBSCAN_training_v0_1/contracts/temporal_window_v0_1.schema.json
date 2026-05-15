@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TemporalWindowV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "window_id",
+    "window_start",
+    "window_end",
+    "services_included",
+    "features",
+    "window_data_quality_score",
+    "training_metadata"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "temporal_window_v0_1"},
+    "window_id": {"type": "string"},
+    "window_start": {"type": "string", "format": "date-time"},
+    "window_end": {"type": "string", "format": "date-time"},
+    "services_included": {"type": "array", "items": {"type": "string"}},
+    "features": {"type": "object", "additionalProperties": {"type": ["number", "string", "boolean", "null"]}},
+    "window_data_quality_score": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "scenario_tag": {"type": ["string", "null"]},
+    "chaos_suitability": {"type": ["string", "null"]},
+    "training_metadata": {"type": "object", "additionalProperties": true}
+  }
+}

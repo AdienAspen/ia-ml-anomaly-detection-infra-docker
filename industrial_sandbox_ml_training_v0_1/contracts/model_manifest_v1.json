@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModelManifestV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "model_name",
+    "model_version",
+    "artifact_type",
+    "feature_contract",
+    "training_dataset",
+    "validation_dataset",
+    "hyperparameters",
+    "thresholds",
+    "metrics",
+    "created_at"
+  ],
+  "properties": {
+    "model_name": {
+      "type": "string",
+      "enum": [
+        "isolation_forest"
+      ]
+    },
+    "model_version": {
+      "type": "string"
+    },
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "joblib"
+      ]
+    },
+    "feature_contract": {
+      "type": "string"
+    },
+    "training_dataset": {
+      "type": "string"
+    },
+    "validation_dataset": {
+      "type": "string"
+    },
+    "hyperparameters": {
+      "type": "object"
+    },
+    "thresholds": {
+      "type": "object",
+      "required": [
+        "anomaly_score_threshold",
+        "min_flag_window"
+      ],
+      "properties": {
+        "anomaly_score_threshold": {
+          "type": "number"
+        },
+        "min_flag_window": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "metrics": {
+      "type": "object"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

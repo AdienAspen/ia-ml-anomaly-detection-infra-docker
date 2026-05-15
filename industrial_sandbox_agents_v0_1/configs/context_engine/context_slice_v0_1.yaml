@@ -1,0 +1,5 @@
+schema_version: context_engine_config_v0_1
+input_contract: enriched_anomaly_event_v0_1
+output_contract: context_slice_v0_1
+max_tokens: 4000
+strategy: minimal_relevant_slice

@@ -1,0 +1,26 @@
+{
+  "model_name": "isolation_forest",
+  "model_version": "baseline_v1",
+  "created_at": "2026-04-21T21:50:53.555421+00:00",
+  "dataset_path": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_ml_training_v0_1/data/processed/training_normal_v1.parquet",
+  "row_count": 72000,
+  "feature_columns": [
+    "cpu_pct",
+    "memory_pct",
+    "latency_ms",
+    "disk_io_pct",
+    "net_error_rate",
+    "queue_length",
+    "throughput_rate",
+    "http_5xx_rate"
+  ],
+  "hyperparameters": {
+    "n_estimators": 300,
+    "max_samples": "auto",
+    "contamination": 0.02,
+    "random_state": 42
+  },
+  "artifact_path": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_ml_training_v0_1/artifacts/models/isolation_forest/baseline_v1/model.joblib",
+  "feature_contract_path": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_ml_training_v0_1/artifacts/models/isolation_forest/baseline_v1/feature_contract.json",
+  "metrics_path": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_ml_training_v0_1/artifacts/metrics/training_baseline_metrics.json"
+}

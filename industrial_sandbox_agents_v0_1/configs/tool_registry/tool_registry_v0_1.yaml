@@ -1,0 +1,11 @@
+schema_version: tool_registry_v0_1
+mcp_compatible: true
+tools:
+  - read_metrics
+  - read_logs
+  - query_iforest_scores
+  - query_propagation_signatures
+  - query_service_topology
+  - read_runbook
+  - generate_incident_card
+  - generate_report

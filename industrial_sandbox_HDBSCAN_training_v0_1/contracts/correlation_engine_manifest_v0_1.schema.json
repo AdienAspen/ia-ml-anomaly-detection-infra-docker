@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CorrelationEngineManifestV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "engine_name",
+    "engine_version",
+    "training_config",
+    "feature_sources",
+    "artifact_paths",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "engine_name": {"type": "string"},
+    "engine_version": {"type": "string"},
+    "training_config": {"type": "string"},
+    "feature_sources": {"type": "array", "items": {"type": "string"}},
+    "artifact_paths": {"type": "object", "additionalProperties": {"type": "string"}},
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

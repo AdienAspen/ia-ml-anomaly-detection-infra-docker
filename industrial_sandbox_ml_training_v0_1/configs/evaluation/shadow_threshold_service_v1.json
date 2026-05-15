@@ -1,0 +1,20 @@
+{
+  "profile_name": "shadow_threshold_service_v1",
+  "mode": "shadow",
+  "model_family": "isolation_forest",
+  "source_diagnostics": "artifacts/reports/decision_diagnostics_v1.json",
+  "score_policy": "score_samples",
+  "threshold_mode": "service_specific",
+  "threshold_by_service": {
+    "checkout-api": 0.691832591180323,
+    "orders-api": 0.6712653569641552,
+    "payments-api": 0.7016270755997039
+  },
+  "matched_global_false_positive_rate": 0.04823022159831545,
+  "min_flag_window": 3,
+  "notes": [
+    "Shadow profile derived from decision diagnostics.",
+    "Use this service-specific threshold set for prolonged shadow evaluation before promoting any operational change.",
+    "Current profile keeps score_samples as the scoring policy."
+  ]
+}

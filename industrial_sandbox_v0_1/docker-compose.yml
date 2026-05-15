@@ -1,0 +1,105 @@
+services:
+  telemetry-generator:
+    build:
+      context: ./services/telemetry_generator
+    container_name: telemetry-generator
+    env_file:
+      - .env
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT}
+      OTEL_SERVICE_NAME: telemetry-generator
+      TZ: ${TZ}
+      APP_TIMEZONE: ${APP_TIMEZONE}
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - sandbox_net
+    volumes:
+      - ./data/synthetic:/app/data/synthetic
+      - ./reports:/app/reports
+      - ../shared_artifacts/detector_policy:/app/shared_artifacts/detector_policy:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os, time; p='/tmp/telemetry_generator_heartbeat'; raise SystemExit(0 if os.path.exists(p) and time.time()-os.path.getmtime(p) < 30 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: "no"
+
+  redis:
+    image: redis:7-alpine
+    container_name: queue-broker
+    command: ["redis-server", "--appendonly", "yes"]
+    environment:
+      TZ: ${TZ}
+    networks:
+      - sandbox_net
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  anomaly-detector:
+    build:
+      context: ./services/anomaly_detector
+    container_name: anomaly-detector
+    env_file:
+      - .env
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT}
+      OTEL_SERVICE_NAME: anomaly-detector
+      TZ: ${TZ}
+      APP_TIMEZONE: ${APP_TIMEZONE}
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - sandbox_net
+    ports:
+      - "18080:8080"
+    volumes:
+      - ./models/isolation_forest:/app/models/isolation_forest
+      - ./data/artifacts:/app/data/artifacts
+      - ./reports:/app/reports
+      - ../shared_artifacts/detector_policy:/app/shared_artifacts/detector_policy:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; raise SystemExit(0 if urlopen('http://127.0.0.1:8080/health').status == 200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.123.0
+    container_name: otel-collector
+    command: ["--config=/etc/otelcol-contrib/config.yaml"]
+    environment:
+      TZ: ${TZ}
+    networks:
+      - sandbox_net
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+    volumes:
+      - ./services/otel/otel-collector-config.yaml:/etc/otelcol-contrib/config.yaml:ro
+      - ./reports:/var/reports
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:13133/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+
+networks:
+  sandbox_net:
+    driver: bridge
+
+volumes:
+  redis_data:

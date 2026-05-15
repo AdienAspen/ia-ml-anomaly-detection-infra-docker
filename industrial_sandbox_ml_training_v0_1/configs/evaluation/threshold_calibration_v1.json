@@ -1,0 +1,52 @@
+{
+  "evaluation_name": "threshold_calibration_v1",
+  "feature_contract": "feature_contract_v1",
+  "validation_dataset": "data/processed/validation_mixed_v1.parquet",
+  "scores_output_path": "artifacts/metrics/validation_scores.parquet",
+  "metrics_output_path": "artifacts/metrics/validation_metrics.json",
+  "recommended_threshold_policy": {
+    "normal_quantile": 0.995,
+    "mixed_quantile": 0.98,
+    "minimum_flag_window": 3
+  },
+  "threshold_sweep": {
+    "quantiles": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.92,
+      0.94,
+      0.95,
+      0.96,
+      0.97,
+      0.975,
+      0.98,
+      0.985,
+      0.99,
+      0.9925,
+      0.995,
+      0.9975,
+      0.999
+    ],
+    "include_thresholds": [
+      0.58
+    ],
+    "operating_criteria": {
+      "max_false_positive_rate_on_normal": 0.1,
+      "max_service_flag_rate_span": 0.08,
+      "minimum_true_positive_rate_on_anomalous": 0.3
+    }
+  },
+  "stability_checks": {
+    "review_by_service": true,
+    "review_false_positive_rate_on_normal": true,
+    "review_burst_sensitivity": true,
+    "review_drift_sensitivity": true
+  }
+}

@@ -1,0 +1,11 @@
+schema_version: agentic_security_baseline_v0_1
+safeguards:
+  - agent_identity
+  - least_privilege
+  - tool_allowlist
+  - human_approval_gates
+  - context_firewall
+  - secrets_isolation
+  - immutable_audit_log
+  - kill_switch_quarantine
+mvp_mode: read_only

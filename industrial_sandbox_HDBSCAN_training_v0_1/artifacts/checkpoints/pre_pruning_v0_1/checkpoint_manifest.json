@@ -1,0 +1,13 @@
+{
+  "checkpoint_name": "pre_pruning_v0_1",
+  "baseline_snapshot": {
+    "feature_count": 16,
+    "eligible_window_count_train": 40,
+    "low_quality_window_count_train": 24,
+    "propagation_detection_rate": 0.315789,
+    "false_propagation_rate": 0.75,
+    "noise_rejection_rate": 0.25,
+    "propagation_order_accuracy": 0.526316,
+    "cluster_stability": 0.333333
+  }
+}

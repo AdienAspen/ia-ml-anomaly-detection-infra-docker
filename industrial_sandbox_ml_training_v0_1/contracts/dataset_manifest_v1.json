@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DatasetManifestV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "dataset_name",
+    "dataset_purpose",
+    "version",
+    "feature_contract",
+    "telemetry_profile",
+    "row_count_target",
+    "services",
+    "scenario_mix",
+    "storage",
+    "source_reference",
+    "reproducibility"
+  ],
+  "properties": {
+    "dataset_name": {
+      "type": "string",
+      "enum": [
+        "training_normal_v1",
+        "validation_mixed_v1"
+      ]
+    },
+    "dataset_purpose": {
+      "type": "string",
+      "enum": [
+        "training",
+        "validation",
+        "audit",
+        "smoke_reference"
+      ]
+    },
+    "version": {
+      "type": "string"
+    },
+    "feature_contract": {
+      "type": "string"
+    },
+    "telemetry_profile": {
+      "type": "string",
+      "enum": [
+        "market_aware_v1"
+      ]
+    },
+    "row_count_target": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "row_count_actual": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "services": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string",
+        "enum": [
+          "payments-api",
+          "orders-api",
+          "checkout-api"
+        ]
+      }
+    },
+    "scenario_mix": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0.0,
+        "maximum": 1.0
+      }
+    },
+    "scenario_mix_actual": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0.0,
+        "maximum": 1.0
+      }
+    },
+    "service_counts_actual": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "relative_path"
+      ],
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": [
+            "csv",
+            "parquet"
+          ]
+        },
+        "relative_path": {
+          "type": "string"
+        },
+        "output_path": {
+          "type": "string"
+        }
+      }
+    },
+    "source_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_repo",
+        "reference_datasets"
+      ],
+      "properties": {
+        "source_repo": {
+          "type": "string"
+        },
+        "reference_datasets": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "reproducibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "random_seed",
+        "generator_version"
+      ],
+      "properties": {
+        "random_seed": {
+          "type": "integer"
+        },
+        "generator_version": {
+          "type": "string"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+[project]
+name = "industrial-sandbox-hdbscan-training"
+version = "0.1.0"
+description = "Correlation Engine Prep and Chaos Readiness Foundation for temporal propagation discovery."
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "scikit-learn>=1.5",
+  "hdbscan>=0.8",
+  "pyyaml>=6.0",
+  "jsonschema>=4.0",
+  "pytest>=8.0"
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

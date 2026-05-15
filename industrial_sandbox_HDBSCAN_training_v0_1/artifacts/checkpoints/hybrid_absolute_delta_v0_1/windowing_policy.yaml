@@ -1,0 +1,16 @@
+schema_version: windowing_policy_v0_2
+window_length_seconds: 120
+stride_seconds: 60
+max_missing_ratio: 0.20
+late_event_tolerance_seconds: 10
+late_discard_ratio_threshold: 0.05
+min_events_per_window: 10
+discard_window_if_quality_below: 0.80
+ordering_strategy:
+  primary_key: timestamp
+  tiebreaker_key: sequence_number
+late_event_policy:
+  mode: timestamp_tolerance_reassign_previous_window
+  within_tolerance_action: include_in_current_window
+  beyond_tolerance_action: keep_for_future_windows_and_mark_current_window
+  degraded_quality_when_late_discard_ratio_exceeds: 0.05

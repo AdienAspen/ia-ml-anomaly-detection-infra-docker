@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CommonTelemetryEventV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "timestamp",
+    "sequence_number",
+    "service_name",
+    "metric_name",
+    "metric_value",
+    "unit",
+    "source",
+    "is_training_only_field",
+    "metadata"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "common_telemetry_event_v0_1"},
+    "event_id": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "sequence_number": {"type": "integer", "minimum": 0},
+    "window_id": {"type": ["string", "null"]},
+    "service_name": {
+      "type": "string",
+      "enum": ["payments-api", "orders-api", "checkout-api", "redis"]
+    },
+    "metric_name": {"type": "string"},
+    "metric_value": {"type": "number"},
+    "unit": {"type": "string"},
+    "correlation_id": {"type": ["string", "null"]},
+    "scenario_tag": {"type": ["string", "null"]},
+    "chaos_suitability": {
+      "type": ["string", "null"],
+      "enum": ["not_suitable", "suitable_with_limits", "suitable_full_replay", "requires_review", null]
+    },
+    "source": {"type": "string", "enum": ["synthetic_generator", "runtime"]},
+    "is_training_only_field": {"type": "boolean"},
+    "metadata": {"type": "object", "additionalProperties": true}
+  }
+}

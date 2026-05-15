@@ -1,0 +1,26 @@
+{
+  "schema_version": "correlation_engine_validation_summary_v0_1",
+  "created_at": "2026-05-12T23:19:54.293275+00:00",
+  "backend_executed": "hdbscan",
+  "eligible_window_count": 35,
+  "propagation_detection_rate": 0.631579,
+  "false_propagation_rate": 0.875,
+  "precision": 0.125,
+  "noise_rejection_rate": 0.125,
+  "propagation_order_accuracy": 0.526316,
+  "temporal_consistency": 1.0,
+  "cluster_stability": 0.346154,
+  "cluster_count": 2,
+  "noise_window_count": 9,
+  "validation_scenarios": [
+    "S0_NORMAL_BASELINE",
+    "S2_SERVICE_TO_REDIS_PROPAGATION",
+    "S3_REDIS_TO_MULTISERVICE_PROPAGATION",
+    "S4_INTERSERVICE_CHAIN",
+    "S6_NOISE_FALSE_POSITIVE",
+    "S8_HIGH_DENSITY_UNCORRELATED_NOISE"
+  ],
+  "feature_count": 17,
+  "validation_min_window_quality_score": 0.85,
+  "low_quality_window_count": 10
+}

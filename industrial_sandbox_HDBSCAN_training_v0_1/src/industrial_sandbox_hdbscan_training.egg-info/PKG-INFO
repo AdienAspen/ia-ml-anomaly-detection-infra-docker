@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: industrial-sandbox-hdbscan-training
+Version: 0.1.0
+Summary: Correlation Engine Prep and Chaos Readiness Foundation for temporal propagation discovery.
+Requires-Python: >=3.10
+Requires-Dist: numpy>=1.26
+Requires-Dist: pandas>=2.2
+Requires-Dist: scikit-learn>=1.5
+Requires-Dist: hdbscan>=0.8
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: jsonschema>=4.0
+Requires-Dist: pytest>=8.0

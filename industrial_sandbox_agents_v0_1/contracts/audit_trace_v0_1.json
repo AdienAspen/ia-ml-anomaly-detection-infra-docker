@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AuditTraceV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "agent_identity", "context_refs", "tools_used", "outputs_generated"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "event_id": {"type": "string"},
+    "agent_identity": {"type": "object", "additionalProperties": true},
+    "context_refs": {"type": "array", "items": {"type": "string"}},
+    "tools_used": {"type": "array", "items": {"type": "string"}},
+    "outputs_generated": {"type": "array", "items": {"type": "string"}}
+  }
+}

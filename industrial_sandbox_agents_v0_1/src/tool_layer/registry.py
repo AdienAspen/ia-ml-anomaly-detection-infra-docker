@@ -1,0 +1,1 @@
+"""Allowlisted tool registry scaffold."""

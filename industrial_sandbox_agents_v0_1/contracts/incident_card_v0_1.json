@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IncidentCardV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "summary", "suspected_scope", "recommended_next_step"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "event_id": {"type": "string"},
+    "summary": {"type": "string"},
+    "suspected_scope": {"type": "string"},
+    "recommended_next_step": {"type": "string"}
+  }
+}

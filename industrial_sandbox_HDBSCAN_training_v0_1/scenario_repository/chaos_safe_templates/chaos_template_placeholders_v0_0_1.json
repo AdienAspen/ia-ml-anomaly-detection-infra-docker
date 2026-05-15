@@ -1,0 +1,17 @@
+{
+  "schema_version": "chaos_template_placeholder_catalog_v0_0_1",
+  "templates": [
+    {
+      "template_id": "placeholder_service_to_redis_chain",
+      "source_signature_family": "S2_SERVICE_TO_REDIS_PROPAGATION",
+      "status": "draft",
+      "notes": ["placeholder only", "no execution semantics yet"]
+    },
+    {
+      "template_id": "placeholder_interservice_chain",
+      "source_signature_family": "S4_INTERSERVICE_CHAIN",
+      "status": "draft",
+      "notes": ["placeholder only", "await eligibility transformation layer"]
+    }
+  ]
+}

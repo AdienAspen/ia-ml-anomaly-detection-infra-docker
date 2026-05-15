@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ToolSpecV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tool_name", "mode", "allowlisted", "mcp_compatible"],
+  "properties": {
+    "tool_name": {"type": "string"},
+    "mode": {"type": "string"},
+    "allowlisted": {"type": "boolean"},
+    "mcp_compatible": {"type": "boolean"},
+    "required_approval": {"type": "boolean"}
+  }
+}

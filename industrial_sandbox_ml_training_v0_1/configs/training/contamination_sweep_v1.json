@@ -1,0 +1,27 @@
+{
+  "experiment_name": "contamination_sweep_v1",
+  "base_training_config": "configs/training/iforest_baseline_v1.json",
+  "validation_dataset": "data/processed/validation_mixed_v1.parquet",
+  "shadow_threshold_profile": "configs/evaluation/shadow_threshold_balanced_v1.json",
+  "experiment_output_dir": "artifacts/models/isolation_forest/experiments",
+  "metrics_output_path": "artifacts/metrics/contamination_sweep_v1.parquet",
+  "report_output_path": "artifacts/reports/contamination_sweep_v1.json",
+  "markdown_output_path": "artifacts/reports/contamination_sweep_v1.md",
+  "contamination_values": [
+    0.004,
+    0.005,
+    0.006,
+    0.0075,
+    0.01,
+    0.0125,
+    0.015,
+    0.02
+  ],
+  "selection_policy": {
+    "minimum_true_positive_rate_on_anomalous": 0.45,
+    "maximum_false_positive_rate_on_normal": 0.08,
+    "primary_goal": "minimize_service_flag_rate_span",
+    "secondary_goal": "maximize_true_positive_rate_on_anomalous",
+    "tertiary_goal": "minimize_false_positive_rate_on_normal"
+  }
+}

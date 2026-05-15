@@ -1,0 +1,52 @@
+{
+  "evaluated_at": "2026-04-21T21:51:48.148378+00:00",
+  "dataset_path": "data/processed/validation_mixed_v1.parquet",
+  "model_path": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_ml_training_v0_1/artifacts/models/isolation_forest/baseline_v1/model.joblib",
+  "row_count": 18000,
+  "threshold": 0.7129212699803884,
+  "flag_rate_overall": 0.020055555555555556,
+  "raw_score_summary": {
+    "min": -0.7251582772230355,
+    "mean": -0.6268859723303081,
+    "std": 0.09370980696838872,
+    "p05": -0.7080364353584724,
+    "p50": -0.6678612645280964,
+    "p95": -0.4330521801912636,
+    "max": -0.39113795329809975
+  },
+  "anomaly_score_summary": {
+    "min": 0.39113795329809975,
+    "mean": 0.6268859723303081,
+    "std": 0.09370980696838872,
+    "p05": 0.4330521801912636,
+    "p50": 0.6678612645280964,
+    "p95": 0.7080364353584724,
+    "max": 0.7251582772230355
+  },
+  "service_flag_rates": [
+    {
+      "service_name": "payments-api",
+      "predicted_flag": 0.050666666666666665
+    },
+    {
+      "service_name": "orders-api",
+      "predicted_flag": 0.003833333333333333
+    },
+    {
+      "service_name": "checkout-api",
+      "predicted_flag": 0.005666666666666667
+    }
+  ],
+  "scenario_flag_rates": [
+    {
+      "scenario_tag": "normal",
+      "predicted_flag": 0.0012032487716835455
+    },
+    {
+      "scenario_tag": "anomalous",
+      "predicted_flag": 0.043478260869565216
+    }
+  ],
+  "false_positive_rate_on_normal": 0.0012032487716835455,
+  "flag_rate_on_anomalous": 0.043478260869565216
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_name": "feature_contract_v1",
+  "contract_type": "feature_contract",
+  "version": "1.0.0",
+  "source_alignment": {
+    "source_repo": "/mnt/e/CODING-2026-heavy/anomaly-detection-iforest-docker/industrial_sandbox_v0_1",
+    "source_contract": "contracts/telemetry_event_v0_1.json",
+    "telemetry_profile": "market_aware_v1"
+  },
+  "model_name": "IsolationForest",
+  "frozen_feature_columns": [
+    "cpu_pct",
+    "memory_pct",
+    "latency_ms",
+    "disk_io_pct",
+    "net_error_rate",
+    "queue_length",
+    "throughput_rate",
+    "http_5xx_rate"
+  ],
+  "label_columns": [
+    "scenario_tag"
+  ],
+  "context_columns": [
+    "event_id",
+    "generated_at",
+    "source_node",
+    "service_name",
+    "status_code",
+    "is_synthetic",
+    "telemetry_profile"
+  ],
+  "services": [
+    "payments-api",
+    "orders-api",
+    "checkout-api"
+  ],
+  "features": {
+    "cpu_pct": {
+      "dtype": "float64",
+      "unit": "percent",
+      "min": 0.0,
+      "max": 100.0,
+      "model_role": "input"
+    },
+    "memory_pct": {
+      "dtype": "float64",
+      "unit": "percent",
+      "min": 0.0,
+      "max": 100.0,
+      "model_role": "input"
+    },
+    "latency_ms": {
+      "dtype": "float64",
+      "unit": "milliseconds",
+      "min": 0.0,
+      "model_role": "input"
+    },
+    "disk_io_pct": {
+      "dtype": "float64",
+      "unit": "percent",
+      "min": 0.0,
+      "max": 100.0,
+      "model_role": "input"
+    },
+    "net_error_rate": {
+      "dtype": "float64",
+      "unit": "errors_per_interval",
+      "min": 0.0,
+      "model_role": "input"
+    },
+    "queue_length": {
+      "dtype": "float64",
+      "unit": "queued_work_units",
+      "min": 0.0,
+      "model_role": "input"
+    },
+    "throughput_rate": {
+      "dtype": "float64",
+      "unit": "processed_work_units_per_interval",
+      "min": 0.0,
+      "model_role": "input"
+    },
+    "http_5xx_rate": {
+      "dtype": "float64",
+      "unit": "server_error_rate",
+      "min": 0.0,
+      "model_role": "input"
+    }
+  },
+  "notes": [
+    "scenario_tag is retained for audit/evaluation and excluded from model input.",
+    "No new features may be added in block 1B without an explicit contract revision."
+  ]
+}

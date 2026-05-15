@@ -1,0 +1,70 @@
+{
+  "schema_version": "scenario_partition_v0_1",
+  "partition": "training",
+  "scenarios": [
+    {
+      "profile_id": "train_s0_baseline_primary",
+      "scenario_name": "S0_NORMAL_BASELINE",
+      "seed": 101,
+      "steps": 12,
+      "interval_seconds": 30,
+      "notes": ["baseline density anchor", "negative reference"]
+    },
+    {
+      "profile_id": "train_s1_local_only_a",
+      "scenario_name": "S1_LOCAL_ANOMALY_ONLY",
+      "seed": 111,
+      "steps": 12,
+      "interval_seconds": 30,
+      "notes": ["localized anomaly without propagation"]
+    },
+    {
+      "profile_id": "train_s2_service_to_redis_a",
+      "scenario_name": "S2_SERVICE_TO_REDIS_PROPAGATION",
+      "seed": 121,
+      "steps": 12,
+      "interval_seconds": 30,
+      "notes": ["simple propagation positive"]
+    },
+    {
+      "profile_id": "train_s4_chain_primary",
+      "scenario_name": "S4_INTERSERVICE_CHAIN",
+      "seed": 141,
+      "steps": 14,
+      "interval_seconds": 30,
+      "notes": ["multi-hop propagation positive"]
+    },
+    {
+      "profile_id": "train_s5_drift_a",
+      "scenario_name": "S5_DRIFT_WITHOUT_INCIDENT",
+      "seed": 151,
+      "steps": 12,
+      "interval_seconds": 30,
+      "notes": ["drift negative"]
+    },
+    {
+      "profile_id": "train_s6_noise_a",
+      "scenario_name": "S6_NOISE_FALSE_POSITIVE",
+      "seed": 161,
+      "steps": 12,
+      "interval_seconds": 30,
+      "notes": ["noise rejection negative"]
+    },
+    {
+      "profile_id": "train_s7_recovery_a",
+      "scenario_name": "S7_RECOVERY_AFTER_DEGRADATION",
+      "seed": 171,
+      "steps": 14,
+      "interval_seconds": 30,
+      "notes": ["propagation with partial recovery"]
+    },
+    {
+      "profile_id": "train_s8_dense_noise_a",
+      "scenario_name": "S8_HIGH_DENSITY_UNCORRELATED_NOISE",
+      "seed": 181,
+      "steps": 12,
+      "interval_seconds": 30,
+      "notes": ["high-density non-correlated negative"]
+    }
+  ]
+}

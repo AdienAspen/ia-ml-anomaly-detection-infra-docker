@@ -1,0 +1,18 @@
+{
+  "model_name": "isolation_forest",
+  "model_version": "baseline_v1",
+  "feature_contract": "feature_contract_v1",
+  "training_dataset": "data/processed/training_normal_v1.parquet",
+  "hyperparameters": {
+    "n_estimators": 300,
+    "max_samples": "auto",
+    "contamination": 0.02,
+    "random_state": 42
+  },
+  "fit_policy": {
+    "drop_missing_rows": false,
+    "enforce_feature_contract": true,
+    "sort_by_timestamp_if_present": true
+  },
+  "artifact_output_dir": "artifacts/models/isolation_forest/baseline_v1"
+}

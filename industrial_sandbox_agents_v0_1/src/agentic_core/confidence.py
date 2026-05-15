@@ -1,0 +1,1 @@
+"""Confidence validation stage scaffold."""

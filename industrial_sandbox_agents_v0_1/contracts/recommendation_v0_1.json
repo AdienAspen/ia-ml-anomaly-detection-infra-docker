@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RecommendationV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "recommendation_type", "recommendation_text"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "event_id": {"type": "string"},
+    "recommendation_type": {"type": "string"},
+    "recommendation_text": {"type": "string"}
+  }
+}

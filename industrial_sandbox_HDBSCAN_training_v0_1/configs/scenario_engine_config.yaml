@@ -1,0 +1,23 @@
+schema_version: scenario_engine_config_v0_1
+scenario_mode: stochastic
+services:
+  - payments-api
+  - orders-api
+  - checkout-api
+  - redis
+scenarios:
+  - S0_NORMAL_BASELINE
+  - S1_LOCAL_ANOMALY_ONLY
+  - S2_SERVICE_TO_REDIS_PROPAGATION
+  - S3_REDIS_TO_MULTISERVICE_PROPAGATION
+  - S4_INTERSERVICE_CHAIN
+  - S5_DRIFT_WITHOUT_INCIDENT
+  - S6_NOISE_FALSE_POSITIVE
+  - S7_RECOVERY_AFTER_DEGRADATION
+  - S8_HIGH_DENSITY_UNCORRELATED_NOISE
+stochastic_controls:
+  jitter_seconds: [0, 20]
+  propagation_lag_seconds: [10, 90]
+  intensity_scale: [0.6, 1.4]
+  allow_branching: true
+  allow_partial_recovery: true

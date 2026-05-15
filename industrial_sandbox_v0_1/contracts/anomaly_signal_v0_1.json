@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AnomalySignalV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "scored_at",
+    "anomaly_score",
+    "anomaly_flag",
+    "model_name",
+    "model_version",
+    "window_size",
+    "reason_codes"
+  ],
+  "properties": {
+    "event_id": { "type": "string" },
+    "scored_at": { "type": "string", "format": "date-time" },
+    "anomaly_score": { "type": "number" },
+    "anomaly_flag": { "type": "boolean" },
+    "model_name": { "type": "string" },
+    "model_version": { "type": "string" },
+    "window_size": { "type": "integer", "minimum": 1 },
+    "reason_codes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

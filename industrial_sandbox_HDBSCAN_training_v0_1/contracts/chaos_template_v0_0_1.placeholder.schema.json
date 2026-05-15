@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChaosTemplateV0_0_1Placeholder",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "template_id",
+    "source_signature_id",
+    "eligibility_score",
+    "preconditions",
+    "safety_limits",
+    "status"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "chaos_template_v0_0_1"},
+    "template_id": {"type": "string"},
+    "source_signature_id": {"type": "string"},
+    "eligibility_score": {"type": "number"},
+    "preconditions": {"type": "array", "items": {"type": "string"}},
+    "safety_limits": {"type": "object", "additionalProperties": true},
+    "status": {"type": "string", "enum": ["draft", "validated", "deprecated"]}
+  }
+}

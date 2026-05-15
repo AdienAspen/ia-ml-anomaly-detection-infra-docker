@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PropagationSignatureV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "signature_id",
+    "cluster_id",
+    "window_id",
+    "detected",
+    "noise",
+    "services_chain_observed",
+    "lag_pattern_seconds_ci",
+    "lag_ci_metadata",
+    "affected_metrics",
+    "metric_ranges_observed",
+    "window_data_quality_score",
+    "propagation_order_confidence",
+    "observation_period",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "propagation_signature_v0_1"},
+    "signature_id": {"type": "string"},
+    "cluster_id": {"type": ["integer", "string", "null"]},
+    "window_id": {"type": "string"},
+    "detected": {"type": "boolean"},
+    "noise": {"type": "boolean"},
+    "services_chain_observed": {"type": "array", "items": {"type": "string"}},
+    "lag_pattern_seconds_ci": {"type": "object", "additionalProperties": true},
+    "lag_ci_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lag_ci_method", "sample_window_count", "minimum_windows_for_precision", "precision"],
+      "properties": {
+        "lag_ci_method": {"type": "string"},
+        "sample_window_count": {"type": "integer", "minimum": 0},
+        "minimum_windows_for_precision": {"type": "integer", "minimum": 1},
+        "precision": {"type": "string", "enum": ["precise", "imprecise"]}
+      }
+    },
+    "affected_metrics": {"type": "object", "additionalProperties": {"type": "array", "items": {"type": "string"}}},
+    "metric_ranges_observed": {"type": "object", "additionalProperties": true},
+    "window_data_quality_score": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "propagation_order_confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "observation_period": {
+      "type": "object",
+      "required": ["start", "end"],
+      "properties": {
+        "start": {"type": "string", "format": "date-time"},
+        "end": {"type": "string", "format": "date-time"}
+      }
+    },
+    "evidence": {"type": "object", "additionalProperties": true}
+  }
+}

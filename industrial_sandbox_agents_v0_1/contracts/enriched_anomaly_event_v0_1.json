@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EnrichedAnomalyEventV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "timestamp",
+    "source",
+    "services_observed",
+    "primary_service",
+    "iforest_scores",
+    "iforest_labels",
+    "correlation_engine",
+    "severity_preliminary"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "event_id": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "source": {"type": "string"},
+    "services_observed": {"type": "array", "items": {"type": "string"}},
+    "primary_service": {"type": "string"},
+    "iforest_scores": {"type": "object", "additionalProperties": {"type": "number"}},
+    "iforest_labels": {"type": "object", "additionalProperties": {"type": "string"}},
+    "correlation_engine": {"type": "object", "additionalProperties": true},
+    "severity_preliminary": {"type": "string"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "raw_event_refs": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,984 @@
+{
+  "csv_path": "data/synthetic/telemetry_events_20260425T172122-0400.csv",
+  "orders_vs_peers_summary": {
+    "payments-api|normal": {
+      "count": 895,
+      "candidate_rate_pct": 4.02,
+      "flag_rate_pct": 0.56,
+      "avg_score": 0.589065,
+      "avg_margin": -0.112562,
+      "p50_margin": -0.071572,
+      "p95_margin": -0.000698
+    },
+    "orders-api|normal": {
+      "count": 956,
+      "candidate_rate_pct": 7.11,
+      "flag_rate_pct": 1.67,
+      "avg_score": 0.568954,
+      "avg_margin": -0.102311,
+      "p50_margin": -0.085735,
+      "p95_margin": 0.00511
+    },
+    "checkout-api|normal": {
+      "count": 917,
+      "candidate_rate_pct": 3.6,
+      "flag_rate_pct": 0.33,
+      "avg_score": 0.572464,
+      "avg_margin": -0.119369,
+      "p50_margin": -0.071262,
+      "p95_margin": -0.002429
+    },
+    "payments-api|anomalous": {
+      "count": 772,
+      "candidate_rate_pct": 75.52,
+      "flag_rate_pct": 58.42,
+      "avg_score": 0.69636,
+      "avg_margin": -0.005267,
+      "p50_margin": 0.001178,
+      "p95_margin": 0.014802
+    },
+    "orders-api|anomalous": {
+      "count": 711,
+      "candidate_rate_pct": 67.65,
+      "flag_rate_pct": 47.4,
+      "avg_score": 0.675111,
+      "avg_margin": 0.003846,
+      "p50_margin": 0.009684,
+      "p95_margin": 0.033756
+    },
+    "checkout-api|anomalous": {
+      "count": 749,
+      "candidate_rate_pct": 74.9,
+      "flag_rate_pct": 57.41,
+      "avg_score": 0.690517,
+      "avg_margin": -0.001316,
+      "p50_margin": 0.009794,
+      "p95_margin": 0.018293
+    }
+  },
+  "feature_compare": {
+    "normal": {
+      "cpu_pct": {
+        "payments-api": {
+          "mean": 52.13,
+          "p50": 51.987,
+          "p95": 64.455
+        },
+        "orders-api": {
+          "mean": 58.767,
+          "p50": 58.894,
+          "p95": 70.964
+        },
+        "checkout-api": {
+          "mean": 56.367,
+          "p50": 56.474,
+          "p95": 68.364
+        }
+      },
+      "memory_pct": {
+        "payments-api": {
+          "mean": 53.451,
+          "p50": 53.507,
+          "p95": 59.591
+        },
+        "orders-api": {
+          "mean": 48.759,
+          "p50": 48.815,
+          "p95": 55.3
+        },
+        "checkout-api": {
+          "mean": 51.708,
+          "p50": 51.688,
+          "p95": 57.775
+        }
+      },
+      "latency_ms": {
+        "payments-api": {
+          "mean": 173.933,
+          "p50": 174.196,
+          "p95": 247.234
+        },
+        "orders-api": {
+          "mean": 155.932,
+          "p50": 155.444,
+          "p95": 229.424
+        },
+        "checkout-api": {
+          "mean": 168.887,
+          "p50": 168.017,
+          "p95": 239.284
+        }
+      },
+      "disk_io_pct": {
+        "payments-api": {
+          "mean": 26.034,
+          "p50": 26.011,
+          "p95": 28.799
+        },
+        "orders-api": {
+          "mean": 30.957,
+          "p50": 30.888,
+          "p95": 33.921
+        },
+        "checkout-api": {
+          "mean": 29.0,
+          "p50": 28.964,
+          "p95": 31.838
+        }
+      },
+      "net_error_rate": {
+        "payments-api": {
+          "mean": 0.718,
+          "p50": 0.718,
+          "p95": 1.071
+        },
+        "orders-api": {
+          "mean": 0.616,
+          "p50": 0.617,
+          "p95": 0.992
+        },
+        "checkout-api": {
+          "mean": 0.779,
+          "p50": 0.784,
+          "p95": 1.133
+        }
+      },
+      "queue_length": {
+        "payments-api": {
+          "mean": 80.903,
+          "p50": 81.096,
+          "p95": 116.277
+        },
+        "orders-api": {
+          "mean": 79.428,
+          "p50": 79.195,
+          "p95": 116.857
+        },
+        "checkout-api": {
+          "mean": 79.812,
+          "p50": 79.392,
+          "p95": 115.237
+        }
+      },
+      "throughput_rate": {
+        "payments-api": {
+          "mean": 50.205,
+          "p50": 50.281,
+          "p95": 67.533
+        },
+        "orders-api": {
+          "mean": 84.426,
+          "p50": 84.725,
+          "p95": 101.799
+        },
+        "checkout-api": {
+          "mean": 62.413,
+          "p50": 62.356,
+          "p95": 81.151
+        }
+      },
+      "http_5xx_rate": {
+        "payments-api": {
+          "mean": 1.838,
+          "p50": 1.826,
+          "p95": 2.906
+        },
+        "orders-api": {
+          "mean": 1.628,
+          "p50": 1.615,
+          "p95": 2.727
+        },
+        "checkout-api": {
+          "mean": 1.876,
+          "p50": 1.873,
+          "p95": 2.921
+        }
+      }
+    },
+    "anomalous": {
+      "cpu_pct": {
+        "payments-api": {
+          "mean": 69.38,
+          "p50": 70.154,
+          "p95": 80.762
+        },
+        "orders-api": {
+          "mean": 76.204,
+          "p50": 76.955,
+          "p95": 87.103
+        },
+        "checkout-api": {
+          "mean": 73.443,
+          "p50": 74.271,
+          "p95": 84.536
+        }
+      },
+      "memory_pct": {
+        "payments-api": {
+          "mean": 60.52,
+          "p50": 60.665,
+          "p95": 66.206
+        },
+        "orders-api": {
+          "mean": 55.794,
+          "p50": 55.867,
+          "p95": 61.59
+        },
+        "checkout-api": {
+          "mean": 58.697,
+          "p50": 58.864,
+          "p95": 64.417
+        }
+      },
+      "latency_ms": {
+        "payments-api": {
+          "mean": 291.706,
+          "p50": 298.889,
+          "p95": 355.389
+        },
+        "orders-api": {
+          "mean": 272.672,
+          "p50": 279.212,
+          "p95": 331.095
+        },
+        "checkout-api": {
+          "mean": 283.255,
+          "p50": 290.138,
+          "p95": 345.466
+        }
+      },
+      "disk_io_pct": {
+        "payments-api": {
+          "mean": 26.423,
+          "p50": 26.419,
+          "p95": 29.525
+        },
+        "orders-api": {
+          "mean": 31.412,
+          "p50": 31.467,
+          "p95": 34.323
+        },
+        "checkout-api": {
+          "mean": 29.404,
+          "p50": 29.396,
+          "p95": 32.416
+        }
+      },
+      "net_error_rate": {
+        "payments-api": {
+          "mean": 1.357,
+          "p50": 1.353,
+          "p95": 1.688
+        },
+        "orders-api": {
+          "mean": 1.27,
+          "p50": 1.277,
+          "p95": 1.616
+        },
+        "checkout-api": {
+          "mean": 1.412,
+          "p50": 1.405,
+          "p95": 1.761
+        }
+      },
+      "queue_length": {
+        "payments-api": {
+          "mean": 139.311,
+          "p50": 143.006,
+          "p95": 171.38
+        },
+        "orders-api": {
+          "mean": 138.676,
+          "p50": 142.244,
+          "p95": 168.688
+        },
+        "checkout-api": {
+          "mean": 137.2,
+          "p50": 141.068,
+          "p95": 168.635
+        }
+      },
+      "throughput_rate": {
+        "payments-api": {
+          "mean": 25.014,
+          "p50": 24.14,
+          "p95": 45.399
+        },
+        "orders-api": {
+          "mean": 59.296,
+          "p50": 58.182,
+          "p95": 80.382
+        },
+        "checkout-api": {
+          "mean": 37.96,
+          "p50": 36.562,
+          "p95": 62.473
+        }
+      },
+      "http_5xx_rate": {
+        "payments-api": {
+          "mean": 3.673,
+          "p50": 3.735,
+          "p95": 4.605
+        },
+        "orders-api": {
+          "mean": 3.494,
+          "p50": 3.565,
+          "p95": 4.44
+        },
+        "checkout-api": {
+          "mean": 3.693,
+          "p50": 3.748,
+          "p95": 4.659
+        }
+      }
+    }
+  },
+  "orders_reason_counts": {
+    "orders_anomalous": [
+      [
+        "service_threshold_breach",
+        481
+      ],
+      [
+        "persistent_window",
+        337
+      ],
+      [
+        "within_expected_range",
+        230
+      ],
+      [
+        "awaiting_window_confirmation",
+        144
+      ]
+    ],
+    "orders_normal": [
+      [
+        "within_expected_range",
+        886
+      ],
+      [
+        "service_threshold_breach",
+        68
+      ],
+      [
+        "awaiting_window_confirmation",
+        52
+      ],
+      [
+        "persistent_window",
+        16
+      ],
+      [
+        "stabilizing_window",
+        2
+      ]
+    ]
+  },
+  "orders_status_counts": {
+    "orders_anomalous": [
+      [
+        "500",
+        186
+      ],
+      [
+        "429",
+        178
+      ],
+      [
+        "503",
+        163
+      ],
+      [
+        "502",
+        155
+      ],
+      [
+        "200",
+        29
+      ]
+    ],
+    "orders_normal": [
+      [
+        "200",
+        502
+      ],
+      [
+        "429",
+        202
+      ],
+      [
+        "502",
+        98
+      ],
+      [
+        "500",
+        78
+      ],
+      [
+        "503",
+        76
+      ]
+    ]
+  },
+  "orders_false_negatives_count": 374,
+  "orders_false_positives_count": 16,
+  "orders_candidate_miss_count": 230,
+  "orders_false_negative_examples": [
+    {
+      "idx": 230,
+      "event_id": "089ef605-ac53-4f44-89fe-75f734c97037",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.439229,
+      "threshold": 0.671265,
+      "margin": -0.232036,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 108.323,
+      "queue_length": 53.073,
+      "net_error_rate": 0.528,
+      "http_5xx_rate": 1.046,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 254,
+      "event_id": "b7056782-c359-49de-a30b-2fe306dd9663",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.458861,
+      "threshold": 0.671265,
+      "margin": -0.212404,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 96.419,
+      "queue_length": 47.629,
+      "net_error_rate": 0.587,
+      "http_5xx_rate": 1.086,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 635,
+      "event_id": "37acb90e-a92b-4aa5-8293-eb50926b6348",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.471414,
+      "threshold": 0.671265,
+      "margin": -0.199851,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 122.732,
+      "queue_length": 63.954,
+      "net_error_rate": 0.65,
+      "http_5xx_rate": 1.291,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 23,
+      "event_id": "3de22d47-1416-42d2-9e0f-2986dfa97769",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.479185,
+      "threshold": 0.671265,
+      "margin": -0.19208,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 91.106,
+      "queue_length": 49.812,
+      "net_error_rate": 0.588,
+      "http_5xx_rate": 0.94,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 227,
+      "event_id": "b9e91094-bf69-49ff-a0ed-a9595602d777",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.493554,
+      "threshold": 0.671265,
+      "margin": -0.177711,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 98.007,
+      "queue_length": 56.11,
+      "net_error_rate": 0.606,
+      "http_5xx_rate": 1.159,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 332,
+      "event_id": "fa9c9a8b-720c-4be8-9af1-2d3dc75d38af",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.506635,
+      "threshold": 0.671265,
+      "margin": -0.16463,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 88.949,
+      "queue_length": 40.799,
+      "net_error_rate": 0.573,
+      "http_5xx_rate": 0.909,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 53,
+      "event_id": "49b91ec9-ba84-442d-991b-1d831a621fec",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.507158,
+      "threshold": 0.671265,
+      "margin": -0.164107,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 104.236,
+      "queue_length": 55.521,
+      "net_error_rate": 0.64,
+      "http_5xx_rate": 1.133,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 848,
+      "event_id": "3eed340c-9c7b-4030-887c-e5ac9830631e",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.50764,
+      "threshold": 0.671265,
+      "margin": -0.163625,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 121.065,
+      "queue_length": 63.085,
+      "net_error_rate": 0.681,
+      "http_5xx_rate": 1.491,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 554,
+      "event_id": "cd1cb5a5-b62b-4f3c-9a25-4ab3b7f8cb88",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.523058,
+      "threshold": 0.671265,
+      "margin": -0.148207,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 121.5,
+      "queue_length": 65.279,
+      "net_error_rate": 0.789,
+      "http_5xx_rate": 1.5,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 275,
+      "event_id": "2a47f1d4-44db-4595-8585-c40b9c68e646",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.52372,
+      "threshold": 0.671265,
+      "margin": -0.147545,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 107.215,
+      "queue_length": 51.96,
+      "net_error_rate": 0.63,
+      "http_5xx_rate": 1.241,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    }
+  ],
+  "orders_false_positive_examples": [
+    {
+      "idx": 2960,
+      "event_id": "3705f7d2-3fbf-447e-91cd-28e3c65c2c2f",
+      "scenario": "normal",
+      "status_code": "503",
+      "score": 0.671656,
+      "threshold": 0.671265,
+      "margin": 0.000391,
+      "candidate_flag": true,
+      "anomaly_flag": true,
+      "latency_ms": 220.341,
+      "queue_length": 117.462,
+      "net_error_rate": 1.089,
+      "http_5xx_rate": 2.821,
+      "reason_codes": [
+        "service_threshold_breach",
+        "persistent_window"
+      ]
+    },
+    {
+      "idx": 3023,
+      "event_id": "287cf262-a8ab-465c-9fcd-994d1b40222b",
+      "scenario": "normal",
+      "status_code": "429",
+      "score": 0.671876,
+      "threshold": 0.671265,
+      "margin": 0.000611,
+      "candidate_flag": true,
+      "anomaly_flag": true,
+      "latency_ms": 235.999,
+      "queue_length": 110.692,
+      "net_error_rate": 0.903,
+      "http_5xx_rate": 2.671,
+      "reason_codes": [
+        "service_threshold_breach",
+        "persistent_window"
+      ]
+    },
+    {
+      "idx": 2879,
+      "event_id": "26e9e4fd-b151-4aa8-a5f9-3b7c796d3534",
+      "scenario": "normal",
+      "status_code": "502",
+      "score": 0.67517,
+      "threshold": 0.671265,
+      "margin": 0.003905,
+      "candidate_flag": true,
+      "anomaly_flag": true,
+      "latency_ms": 237.733,
+      "queue_length": 118.131,
+      "net_error_rate": 1.008,
+      "http_5xx_rate": 2.844,
+      "reason_codes": [
+        "service_threshold_breach",
+        "persistent_window"
+      ]
+    },
+    {
+      "idx": 2504,
+      "event_id": "42edd791-ef54-431e-84a6-e3c3db0af8ce",
+      "scenario": "normal",
+      "status_code": "429",
+      "score": 0.675334,
+      "threshold": 0.671265,
+      "margin": 0.004069,
+      "candidate_flag": true,
+      "anomaly_flag": true,
+      "latency_ms": 209.554,
+      "queue_length": 106.478,
+      "net_error_rate": 0.902,
+      "http_5xx_rate": 2.45,
+      "reason_codes": [
+        "service_threshold_breach",
+        "persistent_window"
+      ]
+    },
+    {
+      "idx": 2576,
+      "event_id": "c4b0e1c8-06ee-4497-933a-87439d23a738",
+      "scenario": "normal",
+      "status_code": "503",
+      "score": 0.676842,
+      "threshold": 0.671265,
+      "margin": 0.005577,
+      "candidate_flag": true,
+      "anomaly_flag": true,
+      "latency_ms": 222.189,
+      "queue_length": 108.607,
+      "net_error_rate": 0.849,
+      "http_5xx_rate": 2.449,
+      "reason_codes": [
+        "service_threshold_breach",
+        "persistent_window"
+      ]
+    },
+    {
+      "idx": 2954,
+      "event_id": "b31bb492-66c5-4545-9632-4bda326f9007",
+      "scenario": "normal",
+      "status_code": "429",
+      "score": 0.680878,
+      "threshold": 0.671265,
+      "margin": 0.009613,
+      "candidate_flag": true,
+      "anomaly_flag": true,
+      "latency_ms": 230.919,
+      "queue_length": 116.282,
+      "net_error_rate": 0.933,
+      "http_5xx_rate": 2.64,
+      "reason_codes": [
+        "service_threshold_breach",
+        "persistent_window"
+      ]
+    },
+    {
+      "idx": 2951,
+      "event_id": "9a14890a-273c-46ed-9f4c-e8a81e1cee4f",
+      "scenario": "normal",
+      "status_code": "429",
+      "score": 0.681574,
+      "threshold": 0.671265,
+      "margin": 0.010309,
+      "candidate_flag": true,
+      "anomaly_flag": true,
+      "latency_ms": 220.102,
+      "queue_length": 115.509,
+      "net_error_rate": 0.902,
+      "http_5xx_rate": 2.676,
+      "reason_codes": [
+        "service_threshold_breach",
+        "persistent_window"
+      ]
+    },
+    {
+      "idx": 3104,
+      "event_id": "7ea62d77-8c5b-4fa6-9a7a-070a7d63081d",
+      "scenario": "normal",
+      "status_code": "503",
+      "score": 0.681649,
+      "threshold": 0.671265,
+      "margin": 0.010384,
+      "candidate_flag": true,
+      "anomaly_flag": true,
+      "latency_ms": 230.584,
+      "queue_length": 117.326,
+      "net_error_rate": 1.066,
+      "http_5xx_rate": 2.707,
+      "reason_codes": [
+        "service_threshold_breach",
+        "persistent_window"
+      ]
+    },
+    {
+      "idx": 3263,
+      "event_id": "a1875431-2b9f-4975-b520-7e48c007fd4c",
+      "scenario": "normal",
+      "status_code": "502",
+      "score": 0.682387,
+      "threshold": 0.671265,
+      "margin": 0.011122,
+      "candidate_flag": true,
+      "anomaly_flag": true,
+      "latency_ms": 226.439,
+      "queue_length": 118.574,
+      "net_error_rate": 0.976,
+      "http_5xx_rate": 2.765,
+      "reason_codes": [
+        "service_threshold_breach",
+        "persistent_window"
+      ]
+    },
+    {
+      "idx": 3026,
+      "event_id": "b79abe9f-83cd-49cb-81ad-c6bcfd7316ef",
+      "scenario": "normal",
+      "status_code": "503",
+      "score": 0.683574,
+      "threshold": 0.671265,
+      "margin": 0.012309,
+      "candidate_flag": true,
+      "anomaly_flag": true,
+      "latency_ms": 237.4,
+      "queue_length": 119.282,
+      "net_error_rate": 0.952,
+      "http_5xx_rate": 2.822,
+      "reason_codes": [
+        "service_threshold_breach",
+        "persistent_window"
+      ]
+    }
+  ],
+  "orders_candidate_miss_examples": [
+    {
+      "idx": 230,
+      "event_id": "089ef605-ac53-4f44-89fe-75f734c97037",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.439229,
+      "threshold": 0.671265,
+      "margin": -0.232036,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 108.323,
+      "queue_length": 53.073,
+      "net_error_rate": 0.528,
+      "http_5xx_rate": 1.046,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 254,
+      "event_id": "b7056782-c359-49de-a30b-2fe306dd9663",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.458861,
+      "threshold": 0.671265,
+      "margin": -0.212404,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 96.419,
+      "queue_length": 47.629,
+      "net_error_rate": 0.587,
+      "http_5xx_rate": 1.086,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 635,
+      "event_id": "37acb90e-a92b-4aa5-8293-eb50926b6348",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.471414,
+      "threshold": 0.671265,
+      "margin": -0.199851,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 122.732,
+      "queue_length": 63.954,
+      "net_error_rate": 0.65,
+      "http_5xx_rate": 1.291,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 23,
+      "event_id": "3de22d47-1416-42d2-9e0f-2986dfa97769",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.479185,
+      "threshold": 0.671265,
+      "margin": -0.19208,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 91.106,
+      "queue_length": 49.812,
+      "net_error_rate": 0.588,
+      "http_5xx_rate": 0.94,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 227,
+      "event_id": "b9e91094-bf69-49ff-a0ed-a9595602d777",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.493554,
+      "threshold": 0.671265,
+      "margin": -0.177711,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 98.007,
+      "queue_length": 56.11,
+      "net_error_rate": 0.606,
+      "http_5xx_rate": 1.159,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 332,
+      "event_id": "fa9c9a8b-720c-4be8-9af1-2d3dc75d38af",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.506635,
+      "threshold": 0.671265,
+      "margin": -0.16463,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 88.949,
+      "queue_length": 40.799,
+      "net_error_rate": 0.573,
+      "http_5xx_rate": 0.909,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 53,
+      "event_id": "49b91ec9-ba84-442d-991b-1d831a621fec",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.507158,
+      "threshold": 0.671265,
+      "margin": -0.164107,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 104.236,
+      "queue_length": 55.521,
+      "net_error_rate": 0.64,
+      "http_5xx_rate": 1.133,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 848,
+      "event_id": "3eed340c-9c7b-4030-887c-e5ac9830631e",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.50764,
+      "threshold": 0.671265,
+      "margin": -0.163625,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 121.065,
+      "queue_length": 63.085,
+      "net_error_rate": 0.681,
+      "http_5xx_rate": 1.491,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 554,
+      "event_id": "cd1cb5a5-b62b-4f3c-9a25-4ab3b7f8cb88",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.523058,
+      "threshold": 0.671265,
+      "margin": -0.148207,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 121.5,
+      "queue_length": 65.279,
+      "net_error_rate": 0.789,
+      "http_5xx_rate": 1.5,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    },
+    {
+      "idx": 275,
+      "event_id": "2a47f1d4-44db-4595-8585-c40b9c68e646",
+      "scenario": "anomalous",
+      "status_code": "200",
+      "score": 0.52372,
+      "threshold": 0.671265,
+      "margin": -0.147545,
+      "candidate_flag": false,
+      "anomaly_flag": false,
+      "latency_ms": 107.215,
+      "queue_length": 51.96,
+      "net_error_rate": 0.63,
+      "http_5xx_rate": 1.241,
+      "reason_codes": [
+        "within_expected_range"
+      ]
+    }
+  ]
+}

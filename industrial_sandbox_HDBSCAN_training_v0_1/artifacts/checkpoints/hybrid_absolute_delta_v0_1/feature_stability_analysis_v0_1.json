@@ -1,0 +1,163 @@
+{
+  "schema_version": "feature_stability_analysis_v0_1",
+  "created_at": "2026-05-12T23:19:54.166210+00:00",
+  "bootstrap_iterations": 12,
+  "eligible_window_count": 35,
+  "low_quality_window_count": 10,
+  "baseline_mean_cluster_stability": 0.537932,
+  "baseline_stability_samples": [
+    0.0,
+    0.633333,
+    0.857143,
+    0.428571,
+    0.678571,
+    0.655172,
+    0.62963,
+    0.541667,
+    0.586207,
+    0.516129,
+    0.387097,
+    0.541667
+  ],
+  "active_feature_count": 17,
+  "active_features": [
+    "iforest_score_max",
+    "iforest_score_mean",
+    "iforest_score_spread",
+    "latency_p95_payments",
+    "latency_p95_orders",
+    "latency_p95_checkout",
+    "delta_latency_orders",
+    "delta_latency_checkout",
+    "error_rate_payments",
+    "error_rate_orders",
+    "error_rate_checkout",
+    "redis_queue_depth",
+    "redis_latency",
+    "window_anomaly_density",
+    "lag_payments_to_redis",
+    "lag_redis_to_checkout",
+    "service_degradation_order_encoded"
+  ],
+  "per_feature": [
+    {
+      "feature": "error_rate_payments",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.518698,
+      "stability_delta_without_feature": -0.019234,
+      "classification": "neutral"
+    },
+    {
+      "feature": "error_rate_orders",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.524255,
+      "stability_delta_without_feature": -0.013677,
+      "classification": "neutral"
+    },
+    {
+      "feature": "latency_p95_payments",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.525777,
+      "stability_delta_without_feature": -0.012155,
+      "classification": "neutral"
+    },
+    {
+      "feature": "delta_latency_orders",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.527196,
+      "stability_delta_without_feature": -0.010736,
+      "classification": "neutral"
+    },
+    {
+      "feature": "iforest_score_mean",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.532228,
+      "stability_delta_without_feature": -0.005704,
+      "classification": "neutral"
+    },
+    {
+      "feature": "window_anomaly_density",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.537932,
+      "stability_delta_without_feature": 0.0,
+      "classification": "neutral"
+    },
+    {
+      "feature": "redis_latency",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.539349,
+      "stability_delta_without_feature": 0.001417,
+      "classification": "neutral"
+    },
+    {
+      "feature": "lag_redis_to_checkout",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.54628,
+      "stability_delta_without_feature": 0.008348,
+      "classification": "neutral"
+    },
+    {
+      "feature": "iforest_score_max",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.559273,
+      "stability_delta_without_feature": 0.021341,
+      "classification": "neutral"
+    },
+    {
+      "feature": "iforest_score_spread",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.564073,
+      "stability_delta_without_feature": 0.026141,
+      "classification": "neutral"
+    },
+    {
+      "feature": "redis_queue_depth",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.575435,
+      "stability_delta_without_feature": 0.037503,
+      "classification": "destabilizer_or_redundant"
+    },
+    {
+      "feature": "lag_payments_to_redis",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.593529,
+      "stability_delta_without_feature": 0.055597,
+      "classification": "destabilizer_or_redundant"
+    },
+    {
+      "feature": "latency_p95_checkout",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.598844,
+      "stability_delta_without_feature": 0.060912,
+      "classification": "destabilizer_or_redundant"
+    },
+    {
+      "feature": "latency_p95_orders",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.607488,
+      "stability_delta_without_feature": 0.069556,
+      "classification": "destabilizer_or_redundant"
+    },
+    {
+      "feature": "delta_latency_checkout",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.612936,
+      "stability_delta_without_feature": 0.075004,
+      "classification": "destabilizer_or_redundant"
+    },
+    {
+      "feature": "error_rate_checkout",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.629492,
+      "stability_delta_without_feature": 0.09156,
+      "classification": "destabilizer_or_redundant"
+    },
+    {
+      "feature": "service_degradation_order_encoded",
+      "stability_with_feature": 0.537932,
+      "stability_without_feature": 0.635764,
+      "stability_delta_without_feature": 0.097832,
+      "classification": "destabilizer_or_redundant"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <rect width="1200" height="420" fill="#fbfaf6" />
+  <text x="40" y="24" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#222">score_samples anomaly-score distributions by service</text>
+  <line x1="50" y1="50" x2="50" y2="330" stroke="#222" stroke-width="1.5"/>
+  <line x1="50" y1="330" x2="370" y2="330" stroke="#222" stroke-width="1.5"/>
+  <text x="50" y="40" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222">checkout-api</text>
+  <polyline fill="none" stroke="#1f77b4" stroke-width="3" points="50.00,319.38 63.91,298.57 77.83,298.86 91.74,305.23 105.65,309.33 119.57,314.57 133.48,318.53 147.39,320.80 161.30,322.64 175.22,322.78 189.13,320.37 203.04,321.93 216.96,321.93 230.87,321.51 244.78,321.22 258.70,317.68 272.61,311.74 286.52,301.83 300.43,288.10 314.35,277.34 328.26,271.11 342.17,295.60 356.09,321.37 370.00,330.00" />
+  <polyline fill="none" stroke="#c0392b" stroke-width="3" points="50.00,330.00 63.91,330.00 77.83,330.00 91.74,330.00 105.65,329.86 119.57,329.86 133.48,330.00 147.39,328.87 161.30,328.44 175.22,327.17 189.13,327.59 203.04,327.45 216.96,328.30 230.87,327.31 244.78,328.58 258.70,329.29 272.61,328.02 286.52,328.44 300.43,327.59 314.35,326.04 328.26,293.76 342.17,276.63 356.09,71.94 370.00,323.06" />
+  <text x="50" y="402" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#444">min 0.391</text>
+  <text x="300" y="402" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#444">max 0.725</text>
+  <line x1="410" y1="50" x2="410" y2="330" stroke="#222" stroke-width="1.5"/>
+  <line x1="410" y1="330" x2="730" y2="330" stroke="#222" stroke-width="1.5"/>
+  <text x="410" y="40" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222">orders-api</text>
+  <polyline fill="none" stroke="#1f77b4" stroke-width="3" points="410.00,329.86 423.91,326.46 437.83,313.44 451.74,300.98 465.65,299.42 479.57,303.39 493.48,308.91 507.39,308.20 521.30,313.01 535.22,314.15 549.13,315.28 563.04,317.83 576.96,318.96 590.87,317.83 604.78,316.41 618.70,314.85 632.61,311.60 646.52,304.24 660.43,252.99 674.35,261.20 688.26,309.90 702.17,323.35 716.09,329.01 730.00,330.00" />
+  <polyline fill="none" stroke="#c0392b" stroke-width="3" points="410.00,330.00 423.91,330.00 437.83,330.00 451.74,330.00 465.65,329.58 479.57,329.01 493.48,328.30 507.39,328.87 521.30,328.02 535.22,329.43 549.13,328.30 563.04,328.44 576.96,328.16 590.87,328.02 604.78,329.01 618.70,327.88 632.61,328.44 646.52,327.03 660.43,299.85 674.35,262.90 688.26,245.63 702.17,230.91 716.09,266.44 730.00,325.19" />
+  <text x="410" y="402" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#444">min 0.391</text>
+  <text x="660" y="402" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#444">max 0.725</text>
+  <line x1="770" y1="50" x2="770" y2="330" stroke="#222" stroke-width="1.5"/>
+  <line x1="770" y1="330" x2="1090" y2="330" stroke="#222" stroke-width="1.5"/>
+  <text x="770" y="40" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222">payments-api</text>
+  <polyline fill="none" stroke="#1f77b4" stroke-width="3" points="770.00,328.58 783.91,318.39 797.83,309.62 811.74,304.24 825.65,305.65 839.57,310.61 853.48,311.88 867.39,315.28 881.30,319.38 895.22,320.52 909.13,319.38 923.04,321.93 936.96,322.50 950.87,321.37 964.78,320.09 978.70,317.97 992.61,315.84 1006.52,309.47 1020.43,298.86 1034.35,292.91 1048.26,282.30 1062.17,274.08 1076.09,286.26 1090.00,327.45" />
+  <polyline fill="none" stroke="#c0392b" stroke-width="3" points="770.00,330.00 783.91,330.00 797.83,330.00 811.74,330.00 825.65,330.00 839.57,330.00 853.48,329.86 867.39,329.72 881.30,329.15 895.22,328.30 909.13,328.02 923.04,328.30 936.96,327.59 950.87,328.87 964.78,328.73 978.70,329.15 992.61,329.43 1006.52,328.44 1020.43,327.03 1034.35,325.19 1048.26,322.92 1062.17,309.05 1076.09,50.00 1090.00,276.35" />
+  <text x="770" y="402" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#444">min 0.391</text>
+  <text x="1020" y="402" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#444">max 0.725</text>
+  <text x="1030" y="28" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1f77b4">normal</text>
+  <text x="1110" y="28" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#c0392b">anomalous</text>
+</svg>

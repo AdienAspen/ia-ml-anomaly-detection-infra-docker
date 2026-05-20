@@ -1,11 +1,153 @@
 schema_version: tool_registry_v0_1
 mcp_compatible: true
+skills:
+  - skill_name: read_metrics
+    description: Read service-level anomaly and detector metrics.
+    default_tool: metrics_query_tool
+    allowed_tools:
+      - metrics_query_tool
+  - skill_name: read_logs
+    description: Read synthetic or summarized logs associated with anomaly events.
+    default_tool: logs_query_tool
+    allowed_tools:
+      - logs_query_tool
+  - skill_name: query_iforest_scores
+    description: Query published Isolation Forest scores for services and windows.
+    default_tool: metrics_query_tool
+    allowed_tools:
+      - metrics_query_tool
+  - skill_name: query_propagation_signatures
+    description: Read correlation-engine outputs and active propagation policy context.
+    default_tool: propagation_signature_reader
+    allowed_tools:
+      - propagation_signature_reader
+  - skill_name: query_service_topology
+    description: Inspect upstream, downstream, and Redis dependency relationships.
+    default_tool: topology_lookup_tool
+    allowed_tools:
+      - topology_lookup_tool
+  - skill_name: read_recent_changes
+    description: Read recent version-control changes relevant to the 1C workspace.
+    default_tool: recent_changes_reader
+    allowed_tools:
+      - recent_changes_reader
+  - skill_name: read_runbook
+    description: Retrieve runbook-like references and operational notes.
+    default_tool: runbook_reader
+    allowed_tools:
+      - runbook_reader
+  - skill_name: generate_incident_card
+    description: Persist validated incident artifacts for downstream review.
+    default_tool: incident_artifact_writer
+    allowed_tools:
+      - incident_artifact_writer
+  - skill_name: generate_report
+    description: Generate a markdown incident report and structured outputs.
+    default_tool: incident_artifact_writer
+    allowed_tools:
+      - incident_artifact_writer
+  - skill_name: send_notification
+    description: Emit notification intents without external side effects.
+    default_tool: notification_sink_tool
+    allowed_tools:
+      - notification_sink_tool
 tools:
-  - read_metrics
-  - read_logs
-  - query_iforest_scores
-  - query_propagation_signatures
-  - query_service_topology
-  - read_runbook
-  - generate_incident_card
-  - generate_report
+  - tool_name: metrics_query_tool
+    description: Read detector decisions by service or event_id.
+    entrypoint: src.tool_layer.local_tools:metrics_query_tool
+    allowlisted: true
+    mcp_compatible: true
+    required_approval: false
+    mode: local
+    outputs:
+      - detector_decision_records
+    constraints:
+      - read_only
+      - no_host_modification
+  - tool_name: logs_query_tool
+    description: Project detector decisions into synthetic log lines for triage.
+    entrypoint: src.tool_layer.local_tools:logs_query_tool
+    allowlisted: true
+    mcp_compatible: true
+    required_approval: false
+    mode: local
+    outputs:
+      - log_summaries
+    constraints:
+      - read_only
+      - no_host_modification
+  - tool_name: propagation_signature_reader
+    description: Read published correlation-engine policy metadata and metrics.
+    entrypoint: src.tool_layer.local_tools:propagation_signature_reader
+    allowlisted: true
+    mcp_compatible: true
+    required_approval: false
+    mode: local
+    outputs:
+      - propagation_policy_context
+    constraints:
+      - read_only
+      - no_host_modification
+  - tool_name: topology_lookup_tool
+    description: Read topology graph relationships for a service or the full graph.
+    entrypoint: src.tool_layer.local_tools:topology_lookup_tool
+    allowlisted: true
+    mcp_compatible: true
+    required_approval: false
+    mode: local
+    outputs:
+      - topology_context
+    constraints:
+      - read_only
+      - no_host_modification
+  - tool_name: recent_changes_reader
+    description: Read recent git-log summaries for the 1C workspace.
+    entrypoint: src.tool_layer.local_tools:recent_changes_reader
+    allowlisted: true
+    mcp_compatible: false
+    required_approval: false
+    mode: local
+    outputs:
+      - git_change_summaries
+    constraints:
+      - read_only
+      - no_host_modification
+  - tool_name: runbook_reader
+    description: Read runbook-like markdown references from allowlisted locations.
+    entrypoint: src.tool_layer.local_tools:runbook_reader
+    allowlisted: true
+    mcp_compatible: true
+    required_approval: false
+    mode: local
+    outputs:
+      - runbook_refs
+    constraints:
+      - read_only
+      - no_host_modification
+  - tool_name: incident_artifact_writer
+    description: Write validated incident outputs into the 1C reports workspace.
+    entrypoint: src.tool_layer.local_tools:incident_artifact_writer
+    allowlisted: true
+    mcp_compatible: true
+    required_approval: false
+    mode: local
+    outputs:
+      - incident_card
+      - confidence_vector
+      - recommendation
+      - report
+    constraints:
+      - workspace_reports_only
+      - no_host_modification
+  - tool_name: notification_sink_tool
+    description: Persist notification intents without external delivery.
+    entrypoint: src.tool_layer.local_tools:notification_sink_tool
+    allowlisted: true
+    mcp_compatible: false
+    required_approval: false
+    mode: local
+    outputs:
+      - notification_intent
+    constraints:
+      - workspace_reports_only
+      - no_external_side_effects

@@ -1,14 +1,57 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ToolSpecV0_1",
+  "$id": "tool_spec_v0_1.json",
+  "title": "tool_spec_v0_1",
   "type": "object",
   "additionalProperties": false,
-  "required": ["tool_name", "mode", "allowlisted", "mcp_compatible"],
+  "required": [
+    "tool_name",
+    "description",
+    "entrypoint",
+    "mode",
+    "allowlisted",
+    "mcp_compatible",
+    "required_approval",
+    "outputs",
+    "constraints"
+  ],
   "properties": {
-    "tool_name": {"type": "string"},
-    "mode": {"type": "string"},
-    "allowlisted": {"type": "boolean"},
-    "mcp_compatible": {"type": "boolean"},
-    "required_approval": {"type": "boolean"}
+    "tool_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "entrypoint": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_\\.]+:[A-Za-z0-9_]+$"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["local", "mcp", "remote"]
+    },
+    "allowlisted": {
+      "type": "boolean"
+    },
+    "mcp_compatible": {
+      "type": "boolean"
+    },
+    "required_approval": {
+      "type": "boolean"
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
   }
 }

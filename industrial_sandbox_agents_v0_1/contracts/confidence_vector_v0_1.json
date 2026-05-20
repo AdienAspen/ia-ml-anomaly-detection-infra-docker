@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ConfidenceVectorV0_1",
+  "$id": "confidence_vector_v0_1.json",
+  "title": "confidence_vector_v0_1",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -13,18 +14,62 @@
     "model_uncertainty",
     "policy_status",
     "human_review_required",
-    "reason"
+    "reason",
+    "conflicting_signals",
+    "missing_context"
   ],
   "properties": {
-    "schema_version": {"type": "string"},
-    "event_id": {"type": "string"},
-    "confidence_score": {"type": "number"},
-    "evidence_strength": {"type": "string"},
-    "retrieval_quality": {"type": "string"},
-    "tool_success_rate": {"type": "number"},
-    "model_uncertainty": {"type": "string"},
-    "policy_status": {"type": "string"},
-    "human_review_required": {"type": "boolean"},
-    "reason": {"type": "string"}
+    "schema_version": {
+      "const": "confidence_vector_v0_1"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence_score": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "evidence_strength": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "retrieval_quality": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "tool_success_rate": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "model_uncertainty": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "policy_status": {
+      "type": "string",
+      "enum": ["pass", "warning", "blocked"]
+    },
+    "human_review_required": {
+      "type": "boolean"
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "conflicting_signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_context": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
   }
 }

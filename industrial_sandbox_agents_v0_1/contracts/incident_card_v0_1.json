@@ -1,14 +1,45 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "IncidentCardV0_1",
+  "$id": "incident_card_v0_1.json",
+  "title": "incident_card_v0_1",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "event_id", "summary", "suspected_scope", "recommended_next_step"],
+  "required": [
+    "schema_version",
+    "event_id",
+    "summary",
+    "severity",
+    "suspected_scope",
+    "diagnosis",
+    "recommended_next_step"
+  ],
   "properties": {
-    "schema_version": {"type": "string"},
-    "event_id": {"type": "string"},
-    "summary": {"type": "string"},
-    "suspected_scope": {"type": "string"},
-    "recommended_next_step": {"type": "string"}
+    "schema_version": {
+      "const": "incident_card_v0_1"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "suspected_scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "diagnosis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recommended_next_step": {
+      "type": "string",
+      "minLength": 1
+    }
   }
 }

@@ -1,0 +1,35 @@
+{
+  "schema_version": "window_scaling_summary_v_02",
+  "training_profile_count": 30,
+  "validation_profile_count": 15,
+  "training_scenario_distribution": {
+    "S0_NORMAL_BASELINE": 4,
+    "S1_LOCAL_ANOMALY_ONLY": 4,
+    "S2_SERVICE_TO_REDIS_PROPAGATION": 4,
+    "S3_REDIS_TO_MULTISERVICE_PROPAGATION": 3,
+    "S4_INTERSERVICE_CHAIN": 3,
+    "S5_DRIFT_WITHOUT_INCIDENT": 3,
+    "S6_NOISE_FALSE_POSITIVE": 3,
+    "S7_RECOVERY_AFTER_DEGRADATION": 3,
+    "S8_HIGH_DENSITY_UNCORRELATED_NOISE": 3
+  },
+  "validation_scenario_distribution": {
+    "S0_NORMAL_BASELINE": 2,
+    "S1_LOCAL_ANOMALY_ONLY": 2,
+    "S2_SERVICE_TO_REDIS_PROPAGATION": 2,
+    "S3_REDIS_TO_MULTISERVICE_PROPAGATION": 2,
+    "S4_INTERSERVICE_CHAIN": 2,
+    "S5_DRIFT_WITHOUT_INCIDENT": 2,
+    "S6_NOISE_FALSE_POSITIVE": 1,
+    "S7_RECOVERY_AFTER_DEGRADATION": 1,
+    "S8_HIGH_DENSITY_UNCORRELATED_NOISE": 1
+  },
+  "training_seed_range": [
+    0,
+    29
+  ],
+  "validation_seed_range": [
+    10000,
+    10014
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "stability_probe_v_02",
+  "post_filter_threshold": 0.3,
+  "post_filter_aggregation": "percentile_25",
+  "results": [
+    {
+      "variant": "baseline_current_reference",
+      "allow_single_cluster": false,
+      "cluster_selection_epsilon": 0.0,
+      "cluster_selection_method": "eom",
+      "propagation_detection_rate": 0.847619,
+      "false_propagation_rate": 0.318182,
+      "precision": 0.681818,
+      "noise_rejection_rate": 0.681818,
+      "propagation_order_accuracy": 0.52381,
+      "temporal_consistency": 1.0,
+      "cluster_stability": 0.362903,
+      "raw_cluster_count": 4,
+      "cluster_count": 3,
+      "noise_window_count": 91,
+      "post_filter_effective_threshold": 0.3,
+      "post_filter_rejected_cluster_count": 1
+    },
+    {
+      "variant": "stability_probe_allow_single_cluster_eom_eps015",
+      "allow_single_cluster": true,
+      "cluster_selection_epsilon": 0.15,
+      "cluster_selection_method": "eom",
+      "propagation_detection_rate": 0.0,
+      "false_propagation_rate": 0.0,
+      "precision": 1.0,
+      "noise_rejection_rate": 1.0,
+      "propagation_order_accuracy": 0.52381,
+      "temporal_consistency": 1.0,
+      "cluster_stability": 0.0,
+      "raw_cluster_count": 0,
+      "cluster_count": 0,
+      "noise_window_count": 215,
+      "post_filter_effective_threshold": 0.3,
+      "post_filter_rejected_cluster_count": 0
+    },
+    {
+      "variant": "stability_probe_allow_single_cluster_leaf_eps015",
+      "allow_single_cluster": true,
+      "cluster_selection_epsilon": 0.15,
+      "cluster_selection_method": "leaf",
+      "propagation_detection_rate": 0.409524,
+      "false_propagation_rate": 0.1,
+      "precision": 0.9,
+      "noise_rejection_rate": 0.9,
+      "propagation_order_accuracy": 0.52381,
+      "temporal_consistency": 1.0,
+      "cluster_stability": 0.722222,
+      "raw_cluster_count": 9,
+      "cluster_count": 5,
+      "noise_window_count": 161,
+      "post_filter_effective_threshold": 0.3,
+      "post_filter_rejected_cluster_count": 4
+    }
+  ]
+}

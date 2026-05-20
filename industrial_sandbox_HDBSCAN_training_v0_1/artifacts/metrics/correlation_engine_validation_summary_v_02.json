@@ -1,0 +1,49 @@
+{
+  "schema_version": "correlation_engine_validation_summary_v_02",
+  "created_at": "2026-05-15T23:01:07.973645+00:00",
+  "backend_executed": "hdbscan",
+  "eligible_window_count": 215,
+  "propagation_detection_rate": 0.847619,
+  "false_propagation_rate": 0.318182,
+  "precision": 0.681818,
+  "noise_rejection_rate": 0.681818,
+  "propagation_order_accuracy": 0.52381,
+  "temporal_consistency": 1.0,
+  "cluster_stability": 0.362903,
+  "cluster_count": 3,
+  "raw_cluster_count": 4,
+  "noise_window_count": 91,
+  "raw_noise_window_count": 23,
+  "validation_scenarios": [
+    "S0_NORMAL_BASELINE",
+    "S1_LOCAL_ANOMALY_ONLY",
+    "S2_SERVICE_TO_REDIS_PROPAGATION",
+    "S3_REDIS_TO_MULTISERVICE_PROPAGATION",
+    "S4_INTERSERVICE_CHAIN",
+    "S5_DRIFT_WITHOUT_INCIDENT",
+    "S6_NOISE_FALSE_POSITIVE",
+    "S7_RECOVERY_AFTER_DEGRADATION",
+    "S8_HIGH_DENSITY_UNCORRELATED_NOISE"
+  ],
+  "feature_count": 40,
+  "validation_min_window_quality_score": 0.85,
+  "low_quality_window_count": 25,
+  "post_filter_requested_threshold": 0.3,
+  "post_filter_aggregation": "percentile_25",
+  "post_filter_effective_threshold": 0.3,
+  "post_filter_policy": "fixed_threshold",
+  "post_filter_fallback_quantile": 0.7,
+  "post_filter_rejected_cluster_count": 1,
+  "post_filter_kept_cluster_ids": [
+    0,
+    1,
+    2
+  ],
+  "post_filter_cluster_iforest_means": {
+    "0": 0.336272,
+    "1": 0.339304,
+    "2": 0.454997,
+    "3": 0.283589
+  },
+  "post_filter_rejected_window_count": 68
+}

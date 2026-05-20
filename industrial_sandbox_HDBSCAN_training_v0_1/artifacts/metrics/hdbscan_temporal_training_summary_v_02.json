@@ -1,0 +1,13 @@
+{
+  "schema_version": "hdbscan_temporal_training_summary_v_02",
+  "backend_requested": "hdbscan",
+  "backend_executed": "hdbscan",
+  "eligible_window_count": 413,
+  "feature_count": 40,
+  "cluster_count": 9,
+  "noise_window_count": 75,
+  "clustered_window_count": 338,
+  "fallback_reason": null,
+  "training_min_window_quality_score": 0.85,
+  "low_quality_window_count": 75
+}

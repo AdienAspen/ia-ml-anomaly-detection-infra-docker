@@ -1,0 +1,23 @@
+{
+  "schema_version": "correlation_engine_manifest_v_02",
+  "engine_name": "hdbscan_temporal",
+  "engine_version": "baseline_v_02",
+  "training_config": "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/industrial_sandbox_HDBSCAN_training_v0_1/configs/hdbscan_config.yaml",
+  "feature_sources": [
+    "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/industrial_sandbox_HDBSCAN_training_v0_1/data/processed/temporal_windows_v_02.json",
+    "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/industrial_sandbox_HDBSCAN_training_v0_1/data/processed/hdbscan_temporal_feature_view_v_02.json"
+  ],
+  "artifact_paths": {
+    "model": "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/industrial_sandbox_HDBSCAN_training_v0_1/artifacts/models/hdbscan_temporal_v_02/hdbscan_temporal_model_v_02.pkl",
+    "metrics": "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/industrial_sandbox_HDBSCAN_training_v0_1/artifacts/metrics/hdbscan_temporal_training_summary_v_02.json"
+  },
+  "created_at": "2026-05-15T23:01:06.570441+00:00",
+  "backend_requested": "hdbscan",
+  "backend_executed": "hdbscan",
+  "fallback_reason": null,
+  "eligible_window_count": 413,
+  "cluster_count": 9,
+  "noise_window_count": 75,
+  "training_min_window_quality_score": 0.85,
+  "low_quality_window_count": 75
+}

@@ -1,0 +1,55 @@
+schema_version: window_scaling_v_02
+purpose: expand_window_volume_for_hdbscan_refactor_v_02
+apply_to_pipeline: hdbscan_v_02_only
+
+targets:
+  training_eligible_windows_min: 200
+  training_eligible_windows_target: 250
+  validation_eligible_windows_min: 80
+  validation_eligible_windows_target: 100
+  positive_class_min_ratio: 0.30
+  negative_class_min_ratio: 0.30
+
+profile_expansion:
+  training_profiles_target: 30
+  validation_profiles_target: 15
+  chaos_eligible_profiles_target: 8
+  profile_generation_mode: seed_sweep
+  keep_all_scenarios_active: true
+  scenarios:
+    - S0_NORMAL_BASELINE
+    - S1_LOCAL_ANOMALY_ONLY
+    - S2_SERVICE_TO_REDIS_PROPAGATION
+    - S3_REDIS_TO_MULTISERVICE_PROPAGATION
+    - S4_INTERSERVICE_CHAIN
+    - S5_DRIFT_WITHOUT_INCIDENT
+    - S6_NOISE_FALSE_POSITIVE
+    - S7_RECOVERY_AFTER_DEGRADATION
+    - S8_HIGH_DENSITY_UNCORRELATED_NOISE
+
+window_sampling:
+  window_length_seconds: 120
+  stride_seconds_current: 60
+  stride_seconds_target: 30
+  min_events_per_window: 10
+  max_missing_ratio: 0.20
+  late_event_tolerance_seconds: 10
+  discard_window_if_quality_below: 0.80
+
+scenario_profile_defaults:
+  steps_per_profile_target: 12
+  interval_seconds: 30
+  stagger_gap_seconds_between_profiles: 300
+  seed_start: 0
+  seed_strategy: sequential
+
+acceptance_checks:
+  require_training_profiles_at_least: 25
+  require_validation_profiles_at_least: 15
+  require_eligible_windows_total_above: 200
+  compare_directionally_not_absolutely: true
+
+notes:
+  - Do not modify the synthetic generator rules.
+  - Do not apply this scaling config to v_01 experiments.
+  - Use this config only after the v_02 feature lane is wired.

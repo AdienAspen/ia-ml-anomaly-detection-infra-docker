@@ -1,0 +1,45 @@
+{
+  "model_name": "hdbscan_temporal",
+  "model_version": "hdbscan_production_v1",
+  "artifact_type": "pickle",
+  "feature_contract": "hdbscan_temporal_feature_contract_v_02",
+  "training_dataset": "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/industrial_sandbox_HDBSCAN_training_v0_1/data/processed/temporal_windows_v_02.json",
+  "validation_dataset": "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/industrial_sandbox_HDBSCAN_training_v0_1/data/processed/hdbscan_temporal_feature_view_v_02.json",
+  "runtime_policy": "hdbscan_correlation_policy_v1.json",
+  "metrics": {
+    "training_metrics_path": "training_summary.json",
+    "validation_metrics_path": "validation_metrics.json",
+    "precision": 0.681818,
+    "recall": 0.847619,
+    "false_propagation_rate": 0.318182,
+    "noise_rejection_rate": 0.681818,
+    "propagation_order_accuracy": 0.52381,
+    "cluster_stability": 0.362903
+  },
+  "created_at": "2026-05-19T23:37:27.810492+00:00",
+  "package_metadata": {
+    "source_dir": "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/industrial_sandbox_HDBSCAN_training_v0_1/artifacts/production/hdbscan_production_v1",
+    "target_dir": "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/shared_artifacts/correlation_engine/hdbscan_production_v1",
+    "source_checkpoint": "post_filter_operating_point_v_02",
+    "copied_files": [
+      "active_correlation_engine.json",
+      "enriched_anomaly_event_contract_v0_1.json",
+      "feature_contract.json",
+      "hdbscan_config.yaml",
+      "hdbscan_correlation_policy_v1.json",
+      "model.pkl",
+      "production_manifest.json",
+      "promotion_notes.md",
+      "topology_graph_v_02.json",
+      "training_manifest.json",
+      "training_summary.json",
+      "validation_metrics.json",
+      "validation_report.md"
+    ],
+    "selected_feature_count": 40,
+    "post_filter_policy": {
+      "threshold": 0.3,
+      "aggregation": "percentile_25"
+    }
+  }
+}

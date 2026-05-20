@@ -1,0 +1,12 @@
+schema_version: hdbscan_temporal_config_v0_2
+model_name: hdbscan_temporal
+min_cluster_size: 5
+min_samples: 3
+cluster_selection_method: eom
+metric: euclidean
+normalize_numeric_features: true
+exclude_training_only_metadata: true
+fallback_density_eps: 0.75
+training_min_window_quality_score: 0.85
+validation_min_window_quality_score: 0.85
+log_low_quality_windows_separately: true

@@ -1,0 +1,5 @@
+{
+  "schema_version": "correlation_engine_alias_v1",
+  "active_policy_path": "hdbscan_correlation_policy_v1.json",
+  "updated_at": "2026-05-19T23:37:27.810272+00:00"
+}

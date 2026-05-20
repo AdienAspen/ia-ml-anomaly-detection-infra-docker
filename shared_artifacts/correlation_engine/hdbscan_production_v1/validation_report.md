@@ -1,0 +1,21 @@
+# Correlation Engine Validation Report
+
+- backend: hdbscan
+- eligible_window_count: 215
+- propagation_detection_rate: 0.847619
+- false_propagation_rate: 0.318182
+- precision: 0.681818
+- noise_rejection_rate: 0.681818
+- propagation_order_accuracy: 0.52381
+- temporal_consistency: 1.0
+- cluster_stability: 0.362903
+- raw_cluster_count: 4
+- cluster_count: 3
+- raw_noise_window_count: 23
+- noise_window_count: 91
+- post_filter_requested_threshold: 0.3
+- post_filter_aggregation: percentile_25
+- post_filter_effective_threshold: 0.3
+- post_filter_policy: fixed_threshold
+- post_filter_rejected_cluster_count: 1
+- post_filter_rejected_window_count: 68

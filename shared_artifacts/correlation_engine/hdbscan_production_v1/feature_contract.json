@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_name": "hdbscan_temporal_feature_contract_v_02",
+  "contract_type": "feature_contract",
+  "version": "1.0.0",
+  "source_alignment": {
+    "source_repo": "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/industrial_sandbox_HDBSCAN_training_v0_1",
+    "source_contract": "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/industrial_sandbox_HDBSCAN_training_v0_1/contracts/propagation_signature_v0_1.schema.json",
+    "window_contract": "/home/adien-i7-remote/workspace/anomaly-detection-iforest-docker/industrial_sandbox_HDBSCAN_training_v0_1/data/processed/temporal_windows_v_02.json"
+  },
+  "model_name": "HDBSCANTemporal",
+  "frozen_feature_columns": [
+    "latency_p95_payments",
+    "latency_p95_orders",
+    "latency_p95_checkout",
+    "delta_latency_orders",
+    "delta_latency_checkout",
+    "error_rate_payments",
+    "error_rate_orders",
+    "error_rate_checkout",
+    "redis_queue_depth",
+    "redis_latency",
+    "window_anomaly_density",
+    "cache_health_score",
+    "degradation_intensity_payments",
+    "degradation_intensity_orders",
+    "degradation_intensity_checkout",
+    "propagation_velocity_payments",
+    "propagation_velocity_orders",
+    "propagation_velocity_checkout",
+    "traffic_pressure_payments",
+    "traffic_pressure_orders",
+    "traffic_pressure_checkout",
+    "flow_efficiency_payments",
+    "flow_efficiency_orders",
+    "flow_efficiency_checkout",
+    "stress_rate_payments",
+    "stress_rate_orders",
+    "stress_rate_checkout",
+    "service_criticality_payments",
+    "service_criticality_redis",
+    "service_criticality_checkout",
+    "service_criticality_orders",
+    "topological_distance_payments",
+    "topological_distance_redis",
+    "topological_distance_checkout",
+    "topological_distance_orders",
+    "upstream_health_payments",
+    "upstream_health_redis",
+    "upstream_health_checkout",
+    "upstream_health_orders",
+    "recovery_memory"
+  ],
+  "excluded_columns": [
+    "scenario_tag",
+    "chaos_suitability",
+    "source_signature_id",
+    "eligibility_score",
+    "ground_truth",
+    "label",
+    "training_label"
+  ],
+  "post_filter_columns": [
+    "iforest_score_mean"
+  ],
+  "window_context_columns": [
+    "window_id",
+    "start_timestamp",
+    "end_timestamp",
+    "scenario_tag",
+    "expected_propagation",
+    "window_data_quality_score"
+  ],
+  "features": {
+    "latency_p95_payments": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "latency_p95_orders": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "latency_p95_checkout": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "delta_latency_orders": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "delta_latency_checkout": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "error_rate_payments": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "error_rate_orders": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "error_rate_checkout": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "redis_queue_depth": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "redis_latency": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "window_anomaly_density": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "cache_health_score": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "degradation_intensity_payments": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "degradation_intensity_orders": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "degradation_intensity_checkout": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "propagation_velocity_payments": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "propagation_velocity_orders": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "propagation_velocity_checkout": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "traffic_pressure_payments": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "traffic_pressure_orders": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "traffic_pressure_checkout": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "flow_efficiency_payments": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "flow_efficiency_orders": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "flow_efficiency_checkout": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "stress_rate_payments": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "stress_rate_orders": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "stress_rate_checkout": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "service_criticality_payments": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "service_criticality_redis": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "service_criticality_checkout": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "service_criticality_orders": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "topological_distance_payments": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "topological_distance_redis": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "topological_distance_checkout": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "topological_distance_orders": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "upstream_health_payments": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "upstream_health_redis": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "upstream_health_checkout": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "upstream_health_orders": {
+      "dtype": "float64",
+      "model_role": "input"
+    },
+    "recovery_memory": {
+      "dtype": "float64",
+      "model_role": "input"
+    }
+  },
+  "notes": [
+    "iforest scores are not direct HDBSCAN inputs in v_02; they are consumed as post-filter confidence signals.",
+    "training-only metadata remains excluded from the HDBSCAN feature vector.",
+    "This package intentionally preserves the 40-feature operating point selected before the final stability-only experiments."
+  ]
+}

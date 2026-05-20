@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_name": "enriched_anomaly_event_v0_1",
+  "contract_type": "runtime_event_contract",
+  "version": "1.0.0",
+  "producer": "correlation_engine_hdbscan_v_02",
+  "intended_consumer": "block_1c_agentic_layer",
+  "allowed_fields": [
+    "iforest_scores",
+    "propagation_signature_id",
+    "window_data_quality_score",
+    "severity_preliminary",
+    "evidence_refs"
+  ],
+  "forbidden_fields": [
+    "chaos_template",
+    "chaos_execution_plan",
+    "replay_metadata"
+  ],
+  "notes": [
+    "This contract is runtime-oriented and intentionally excludes any direct chaos execution payload.",
+    "1C may enrich or route this event, but it must preserve the defensive boundary established in 1B.2."
+  ]
+}

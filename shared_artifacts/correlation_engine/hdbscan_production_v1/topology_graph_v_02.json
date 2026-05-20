@@ -1,0 +1,16 @@
+{
+  "schema_version": "topology_graph_v_02",
+  "nodes": ["payments", "redis", "checkout", "orders"],
+  "edges": [
+    {"source": "payments", "target": "redis", "weight": 1},
+    {"source": "redis", "target": "checkout", "weight": 1},
+    {"source": "checkout", "target": "orders", "weight": 1},
+    {"source": "payments", "target": "orders", "weight": 2}
+  ],
+  "criticality": {
+    "payments": 1,
+    "redis": 2,
+    "checkout": 3,
+    "orders": 3
+  }
+}

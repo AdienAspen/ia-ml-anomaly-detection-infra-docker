@@ -1,0 +1,18 @@
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+COPY pyproject.toml README.md ./
+RUN pip install --no-cache-dir uv==0.11.7
+
+COPY contracts ./contracts
+COPY configs ./configs
+COPY scripts ./scripts
+COPY src ./src
+
+RUN uv sync --no-dev
+
+CMD [".venv/bin/python", "scripts/run_context_engine_service.py"]

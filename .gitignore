@@ -8,3 +8,8 @@
 .DS_Store
 Thumbs.db
 .vscode/
+
+# 1C runtime outputs
+industrial_sandbox_agents_v0_1/reports/incidents/
+industrial_sandbox_agents_v0_1/reports/notifications/
+industrial_sandbox_agents_v0_1/reports/context_slices.jsonl

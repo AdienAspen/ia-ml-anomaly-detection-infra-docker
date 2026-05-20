@@ -1,7 +1,16 @@
 schema_version: event_bus_config_v0_1
 backend: redis
-publish_channel: telemetry.enriched_anomaly
-consume_channel: telemetry.enriched_anomaly
+transport_mode: redis_streams
+stream_prefix: agentic
+consume_stream: enriched_anomaly
+publish_stream: context_slice
+redis_port: 6379
+redis_db: 0
+decode_responses: true
+consumer_start_id: "$"
+block_ms: 5000
+docker_container_name: queue-broker
+docker_network_alias: redis
 future_compatible_backends:
   - kafka
   - redpanda

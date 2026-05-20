@@ -75,6 +75,47 @@ services:
       start_period: 20s
     restart: unless-stopped
 
+  agentic-layer:
+    build:
+      context: ../industrial_sandbox_agents_v0_1
+    container_name: agentic-layer
+    env_file:
+      - .env
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT}
+      OTEL_SERVICE_NAME: agentic-layer
+      TZ: ${TZ}
+      APP_TIMEZONE: ${APP_TIMEZONE}
+      EVENT_BUS_BACKEND: redis
+      REDIS_HOST: redis
+      REDIS_PORT: ${REDIS_PORT}
+      REDIS_DB: 0
+      REDIS_DECODE_RESPONSES: true
+      REDIS_STREAM_PREFIX: ${AGENTIC_STREAM_PREFIX}
+      EVENT_INPUT_STREAM: ${AGENTIC_INPUT_STREAM}
+      EVENT_OUTPUT_STREAM: ${AGENTIC_OUTPUT_STREAM}
+      REDIS_CONSUMER_START_ID: ${AGENTIC_CONSUMER_START_ID}
+      REDIS_BLOCK_MS: ${AGENTIC_REDIS_BLOCK_MS}
+      CONTEXT_REPORT_PATH: ${AGENTIC_REPORT_PATH}
+      CONTEXT_HEARTBEAT_PATH: ${AGENTIC_HEARTBEAT_PATH}
+      AGENT_MODE: ${AGENTIC_MODE}
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - sandbox_net
+    volumes:
+      - ../industrial_sandbox_agents_v0_1/reports:/app/reports
+      - ../shared_artifacts/detector_policy:/app/shared_artifacts/detector_policy:ro
+      - ../shared_artifacts/correlation_engine:/app/shared_artifacts/correlation_engine:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os, time; p='/tmp/context_engine_heartbeat'; raise SystemExit(0 if os.path.exists(p) and time.time()-os.path.getmtime(p) < 30 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+
   otel-collector:
     image: otel/opentelemetry-collector-contrib:0.123.0
     container_name: otel-collector

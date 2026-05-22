@@ -55,6 +55,7 @@ services:
       OTEL_SERVICE_NAME: anomaly-detector
       TZ: ${TZ}
       APP_TIMEZONE: ${APP_TIMEZONE}
+      ANOMALY_STREAM: ${ANOMALY_STREAM}
     depends_on:
       redis:
         condition: service_healthy
@@ -69,6 +70,46 @@ services:
       - ../shared_artifacts/detector_policy:/app/shared_artifacts/detector_policy:ro
     healthcheck:
       test: ["CMD", "python", "-c", "from urllib.request import urlopen; raise SystemExit(0 if urlopen('http://127.0.0.1:8080/health').status == 200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+
+  correlation-bridge:
+    build:
+      context: ./services/correlation_bridge
+    container_name: correlation-bridge
+    env_file:
+      - .env
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT}
+      OTEL_SERVICE_NAME: correlation-bridge
+      TZ: ${TZ}
+      APP_TIMEZONE: ${APP_TIMEZONE}
+      REDIS_HOST: redis
+      REDIS_PORT: ${REDIS_PORT}
+      REDIS_DB: 0
+      ANOMALY_STREAM: ${ANOMALY_STREAM}
+      ENRICHED_STREAM: ${ENRICHED_STREAM}
+      CORRELATION_STREAM_START_ID: ${CORRELATION_STREAM_START_ID}
+      CORRELATION_STREAM_BLOCK_MS: ${CORRELATION_STREAM_BLOCK_MS}
+      CORRELATION_WINDOW_SIZE: ${CORRELATION_WINDOW_SIZE}
+      CORRELATION_HEARTBEAT_PATH: ${CORRELATION_HEARTBEAT_PATH}
+      CORRELATION_REPORT_PATH: ${CORRELATION_REPORT_PATH}
+      CORRELATION_ALIAS_PATH: /app/shared_artifacts/correlation_engine/active_correlation_engine.json
+    depends_on:
+      redis:
+        condition: service_healthy
+      anomaly-detector:
+        condition: service_healthy
+    networks:
+      - sandbox_net
+    volumes:
+      - ./reports:/app/reports
+      - ../shared_artifacts/correlation_engine:/app/shared_artifacts/correlation_engine:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; raise SystemExit(0 if urlopen('http://127.0.0.1:8081/health').status == 200 else 1)"]
       interval: 30s
       timeout: 5s
       retries: 3
@@ -102,6 +143,8 @@ services:
     depends_on:
       redis:
         condition: service_healthy
+      correlation-bridge:
+        condition: service_healthy
     networks:
       - sandbox_net
     volumes:
@@ -117,7 +160,8 @@ services:
     restart: unless-stopped
 
   otel-collector:
-    image: otel/opentelemetry-collector-contrib:0.123.0
+    build:
+      context: ./services/otel
     container_name: otel-collector
     command: ["--config=/etc/otelcol-contrib/config.yaml"]
     environment:
@@ -131,7 +175,7 @@ services:
       - ./services/otel/otel-collector-config.yaml:/etc/otelcol-contrib/config.yaml:ro
       - ./reports:/var/reports
     healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:13133/"]
+      test: ["CMD", "/usr/local/bin/busybox.static", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:13133/"]
       interval: 30s
       timeout: 5s
       retries: 3

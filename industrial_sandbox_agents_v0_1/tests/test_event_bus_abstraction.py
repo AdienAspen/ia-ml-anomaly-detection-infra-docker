@@ -38,5 +38,18 @@ class RedisEventBusAbstractionTests(unittest.TestCase):
         self.assertEqual([item.payload["event_id"] for item in second_batch], ["evt-002"])
 
 
+    def test_publish_consume_roundtrip_without_prefix(self) -> None:
+        fake_redis = FakeRedisStreams()
+        publisher = RedisEventPublisher(fake_redis, stream_prefix="")
+        consumer = RedisEventConsumer(fake_redis, stream_prefix="")
+
+        payload = build_sample_enriched_anomaly_event("evt-no-prefix")
+        receipt = publisher.publish_event(EventEnvelope(topic="enriched.correlation.stream", payload=payload))
+        consumed = consumer.consume_event("enriched.correlation.stream")
+
+        self.assertEqual(receipt.topic, "enriched.correlation.stream")
+        self.assertEqual(len(consumed), 1)
+        self.assertEqual(consumed[0].payload["event_id"], "evt-no-prefix")
+
 if __name__ == "__main__":
     unittest.main()

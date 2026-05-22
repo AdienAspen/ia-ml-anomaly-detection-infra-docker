@@ -1,15 +1,154 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "AuditTraceV0_1",
+  "$id": "audit_trace_v0_1.json",
+  "title": "audit_trace_v0_1",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "event_id", "agent_identity", "context_refs", "tools_used", "outputs_generated"],
+  "required": [
+    "schema_version",
+    "event_id",
+    "generated_at",
+    "agent_identity",
+    "context_snapshot",
+    "tools_used",
+    "outputs_generated",
+    "policy_evaluation",
+    "cognitive_provenance",
+    "decision_rationale"
+  ],
   "properties": {
-    "schema_version": {"type": "string"},
-    "event_id": {"type": "string"},
-    "agent_identity": {"type": "object", "additionalProperties": true},
-    "context_refs": {"type": "array", "items": {"type": "string"}},
-    "tools_used": {"type": "array", "items": {"type": "string"}},
-    "outputs_generated": {"type": "array", "items": {"type": "string"}}
+    "schema_version": {
+      "const": "audit_trace_v0_1"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "agent_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent_name", "runtime", "mode", "version", "generated_at"],
+      "properties": {
+        "agent_name": {"type": "string"},
+        "runtime": {"type": "string"},
+        "mode": {"type": "string"},
+        "version": {"type": "string"},
+        "generated_at": {"type": "string"}
+      }
+    },
+    "context_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_service",
+        "related_services",
+        "topology_summary",
+        "propagation_summary",
+        "recent_anomalies_count",
+        "runbook_refs_count",
+        "policy_refs_count",
+        "token_budget"
+      ],
+      "properties": {
+        "primary_service": {"type": "string"},
+        "related_services": {"type": "array", "items": {"type": "string"}},
+        "topology_summary": {"type": "string"},
+        "propagation_summary": {"type": "string"},
+        "recent_anomalies_count": {"type": "integer", "minimum": 0},
+        "runbook_refs_count": {"type": "integer", "minimum": 0},
+        "policy_refs_count": {"type": "integer", "minimum": 0},
+        "token_budget": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "tools_used": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["tool_name", "status", "records_found", "source"],
+        "properties": {
+          "tool_name": {"type": "string"},
+          "status": {"type": "string"},
+          "records_found": {"type": "integer", "minimum": 0},
+          "source": {"type": "string"}
+        }
+      }
+    },
+    "outputs_generated": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "policy_evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "mode",
+        "human_approval_required",
+        "reviewed_tools",
+        "prohibited_actions_checked",
+        "violations"
+      ],
+      "properties": {
+        "status": {"type": "string", "enum": ["pass", "warning", "blocked"]},
+        "mode": {"type": "string"},
+        "human_approval_required": {"type": "boolean"},
+        "reviewed_tools": {"type": "array", "items": {"type": "string"}},
+        "prohibited_actions_checked": {"type": "array", "items": {"type": "string"}},
+        "violations": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "cognitive_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "confidence_score",
+        "evidence_strength",
+        "retrieval_quality",
+        "tool_success_rate",
+        "model_uncertainty",
+        "missing_context",
+        "conflicting_signals",
+        "evidence_sources",
+        "reason"
+      ],
+      "properties": {
+        "confidence_score": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+        "evidence_strength": {"type": "string"},
+        "retrieval_quality": {"type": "string"},
+        "tool_success_rate": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+        "model_uncertainty": {"type": "string"},
+        "missing_context": {"type": "array", "items": {"type": "string"}},
+        "conflicting_signals": {"type": "array", "items": {"type": "string"}},
+        "evidence_sources": {"type": "array", "items": {"type": "string"}},
+        "reason": {"type": "string"}
+      }
+    },
+    "decision_rationale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "severity",
+        "recommendation_type",
+        "recommendation_text",
+        "human_review_required"
+      ],
+      "properties": {
+        "summary": {"type": "string"},
+        "severity": {"type": "string"},
+        "recommendation_type": {"type": "string"},
+        "recommendation_text": {"type": "string"},
+        "human_review_required": {"type": "boolean"}
+      }
+    }
   }
 }

@@ -107,6 +107,8 @@ def _normalize_topic(topic: str | None) -> str:
 
 
 def _build_stream_name(prefix: str, topic: str) -> str:
+    if not prefix:
+        return topic
     return f"{prefix}:{topic}"
 
 

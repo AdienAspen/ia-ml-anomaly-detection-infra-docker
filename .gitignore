@@ -13,3 +13,7 @@ Thumbs.db
 industrial_sandbox_agents_v0_1/reports/incidents/
 industrial_sandbox_agents_v0_1/reports/notifications/
 industrial_sandbox_agents_v0_1/reports/context_slices.jsonl
+# Runtime flow smoke outputs
+industrial_sandbox_v0_1/data/synthetic/telemetry_events_*.csv
+industrial_sandbox_v0_1/reports/enriched_correlation_events.jsonl
+industrial_sandbox_v0_1/reports/detector_decisions.jsonl

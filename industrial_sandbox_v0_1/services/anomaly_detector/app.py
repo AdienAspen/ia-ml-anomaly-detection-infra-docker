@@ -16,7 +16,7 @@ from flask import Flask, jsonify, request
 REDIS_HOST = os.getenv("REDIS_HOST", "redis")
 REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))
 REDIS_CHANNEL = os.getenv("REDIS_CHANNEL", "telemetry.raw")
-ANOMALY_CHANNEL = os.getenv("ANOMALY_CHANNEL", "telemetry.anomaly")
+ANOMALY_STREAM = os.getenv("ANOMALY_STREAM", "telemetry.anomaly.stream")
 WINDOW_SIZE = int(os.getenv("DETECTOR_WINDOW_SIZE", "32"))
 MODEL_NAME = os.getenv("MODEL_NAME", "isolation_forest")
 MODEL_VERSION = os.getenv("MODEL_VERSION", "shadow_threshold_service_v1")
@@ -223,8 +223,10 @@ def score_event(event: dict) -> dict:
     record_metrics(inference_latency_ms, decision_freshness_ms)
 
     signal = {
+        "schema_version": "detector_signal_v0_1",
         "event_id": event["event_id"],
         "service_name": service_name,
+        "source_stream": ANOMALY_STREAM,
         "scenario_tag": event.get("scenario_tag"),
         "generated_at": event.get("generated_at"),
         "scored_at": scored_at_dt.isoformat(),
@@ -248,6 +250,9 @@ def score_event(event: dict) -> dict:
         "policy_loaded_at": snapshot.loaded_at,
         "inference_latency_ms": round(inference_latency_ms, 6),
         "decision_freshness_ms": round(decision_freshness_ms, 6) if decision_freshness_ms is not None else None,
+        "iforest_label": "anomalous" if persistent_flag else "normal",
+        "telemetry_snapshot": {field: event.get(field) for field in [*DEFAULT_FEATURE_COLUMNS, "status_code"]},
+        "raw_event_ref": f"redis-pubsub://{REDIS_CHANNEL}//{event['event_id']}",
     }
     with DECISION_LOG_PATH.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(signal) + "\n")
@@ -261,7 +266,7 @@ def consume() -> None:
     for message in pubsub.listen():
         payload = json.loads(message["data"])
         signal = score_event(payload)
-        redis_client.publish(ANOMALY_CHANNEL, json.dumps(signal))
+        redis_client.xadd(ANOMALY_STREAM, {"payload": json.dumps(signal, sort_keys=True)})
         with state_lock:
             state["events_seen"] += 1
             state["last_event_id"] = payload["event_id"]
@@ -281,6 +286,7 @@ def health() -> tuple:
         payload = {
             "status": "ok",
             "redis_connected": state["redis_connected"],
+            "anomaly_stream": ANOMALY_STREAM,
             "events_seen": state["events_seen"],
             "last_event_id": state["last_event_id"],
             "last_scored_at": state["last_scored_at"],

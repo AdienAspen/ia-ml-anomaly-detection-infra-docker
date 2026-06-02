@@ -4,7 +4,7 @@
 [![Docker](https://img.shields.io/badge/docker-%2320232a?logo=docker&logoColor=%2361DAFB)](https://www.docker.com/)
 [![Redis](https://img.shields.io/badge/redis-DC382D?logo=redis&logoColor=white)](https://redis.io/)
 [![Machine Learning](https://img.shields.io/badge/ML-Anomaly%20Detection-orange)](https://scikit-learn.org/)
-[![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-000000?logo=opentelemetry&logoColor=white)](https://opentelemetry.io/)
+[![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-419EDA?logo=opentelemetry&logoColor=white)](https://opentelemetry.io/)
 
 ## Overview
 

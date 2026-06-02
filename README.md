@@ -1,5 +1,11 @@
 # Anomaly Propagation Detection System – ML Correlation Engine
 
+[![Python](https://img.shields.io/badge/python-3.9+-blue?logo=python)](https://www.python.org/)
+[![Docker](https://img.shields.io/badge/docker-%2320232a?logo=docker&logoColor=%2361DAFB)](https://www.docker.com/)
+[![Redis](https://img.shields.io/badge/redis-DC382D?logo=redis&logoColor=white)](https://redis.io/)
+[![Machine Learning](https://img.shields.io/badge/ML-Anomaly%20Detection-orange)](https://scikit-learn.org/)
+[![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-000000?logo=opentelemetry&logoColor=white)](https://opentelemetry.io/)
+
 ## Overview
 
 This repository contains a **proof-of-concept anomaly propagation detection system** for simulated distributed services, focused on `payments`, `checkout`, `orders`, and `Redis`. It combines an **Isolation Forest** for anomaly scoring with a **temporal HDBSCAN correlation engine** for identifying propagation signatures across services. The platform is built around synthetic telemetry, Redis-based event flow, containerized runtime services, and an agentic layer for contextual reasoning and auditability.

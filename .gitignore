@@ -9,10 +9,17 @@
 Thumbs.db
 .vscode/
 
+# Local DevOps planning docs
+industrial_sandbox_agents_v0_2/TECHNICAL_PLAN-Master-v*.txt
+
+# Autonomous V_02 repository managed by its own Git history
+industrial_sandbox_agents_v0_2/industrial_sandbox_v_02/
+
 # 1C runtime outputs
 industrial_sandbox_agents_v0_1/reports/incidents/
 industrial_sandbox_agents_v0_1/reports/notifications/
 industrial_sandbox_agents_v0_1/reports/context_slices.jsonl
+industrial_sandbox_agents_v0_1/audit-report-1.ipynb
 # Runtime flow smoke outputs
 industrial_sandbox_v0_1/data/synthetic/telemetry_events_*.csv
 industrial_sandbox_v0_1/reports/enriched_correlation_events.jsonl
